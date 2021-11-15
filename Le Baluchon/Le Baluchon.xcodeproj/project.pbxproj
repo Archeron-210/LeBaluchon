@@ -14,6 +14,7 @@
 		201D6BEE2742B62300C11EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BED2742B62300C11EB1 /* Assets.xcassets */; };
 		201D6BF12742B62300C11EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BEF2742B62300C11EB1 /* LaunchScreen.storyboard */; };
 		201D6BFC2742B62400C11EB1 /* Le_BaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D6BFB2742B62400C11EB1 /* Le_BaluchonTests.swift */; };
+		201D6C222742CBF300C11EB1 /* Nickainley-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = 201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		201D6BFB2742B62400C11EB1 /* Le_BaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Le_BaluchonTests.swift; sourceTree = "<group>"; };
 		201D6BFD2742B62400C11EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201D6C022742B62400C11EB1 /* Le BaluchonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le BaluchonUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nickainley-Normal.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,13 +97,10 @@
 		201D6BE32742B61800C11EB1 /* Le Baluchon */ = {
 			isa = PBXGroup;
 			children = (
-				201D6BE42742B61800C11EB1 /* AppDelegate.swift */,
-				201D6BE62742B61800C11EB1 /* SceneDelegate.swift */,
-				201D6BE82742B61800C11EB1 /* ViewController.swift */,
-				201D6BEA2742B61800C11EB1 /* Main.storyboard */,
-				201D6BED2742B62300C11EB1 /* Assets.xcassets */,
-				201D6BEF2742B62300C11EB1 /* LaunchScreen.storyboard */,
-				201D6BF22742B62300C11EB1 /* Info.plist */,
+				201D6C1A2742B86900C11EB1 /* Model */,
+				201D6C1B2742B87300C11EB1 /* View */,
+				201D6C1C2742B87C00C11EB1 /* Controller */,
+				201D6C1D2742B88900C11EB1 /* Supporting files */,
 			);
 			path = "Le Baluchon";
 			sourceTree = "<group>";
@@ -113,6 +112,42 @@
 				201D6BFD2742B62400C11EB1 /* Info.plist */,
 			);
 			path = "Le BaluchonTests";
+			sourceTree = "<group>";
+		};
+		201D6C1A2742B86900C11EB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		201D6C1B2742B87300C11EB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				201D6BEA2742B61800C11EB1 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		201D6C1C2742B87C00C11EB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				201D6BE82742B61800C11EB1 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		201D6C1D2742B88900C11EB1 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				201D6BF22742B62300C11EB1 /* Info.plist */,
+				201D6BEF2742B62300C11EB1 /* LaunchScreen.storyboard */,
+				201D6BED2742B62300C11EB1 /* Assets.xcassets */,
+				201D6BE62742B61800C11EB1 /* SceneDelegate.swift */,
+				201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */,
+				201D6BE42742B61800C11EB1 /* AppDelegate.swift */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				201D6BF12742B62300C11EB1 /* LaunchScreen.storyboard in Resources */,
+				201D6C222742CBF300C11EB1 /* Nickainley-Normal.otf in Resources */,
 				201D6BEE2742B62300C11EB1 /* Assets.xcassets in Resources */,
 				201D6BEC2742B61800C11EB1 /* Main.storyboard in Resources */,
 			);
@@ -424,7 +460,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3UQTFY6Z46;
-				INFOPLIST_FILE = "Le Baluchon/Info.plist";
+				INFOPLIST_FILE = "Le Baluchon/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -443,7 +479,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3UQTFY6Z46;
-				INFOPLIST_FILE = "Le Baluchon/Info.plist";
+				INFOPLIST_FILE = "Le Baluchon/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
