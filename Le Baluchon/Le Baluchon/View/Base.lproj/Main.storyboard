@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Welcome-->
+        <!--Accueil-->
         <scene sceneID="8yE-8m-O62">
             <objects>
                 <viewController id="C6i-Kf-8Xh" customClass="WelcomeViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,25 +51,34 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="102"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
-                                        <state key="normal" title="Météo">
+                                        <state key="normal" title="Consulter la météo">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="vey-aV-VdI" kind="show" id="mk0-0S-pbF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yK3-mS-pB5">
                                         <rect key="frame" x="0.0" y="136" width="374" height="102"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
-                                        <state key="normal" title="Taux de change">
+                                        <state key="normal" title="Obtenir le taux de change">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Ofq-YI-1qj" kind="show" id="rKi-3A-ncL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLk-Pp-0FM">
                                         <rect key="frame" x="0.0" y="272" width="374" height="102"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
-                                        <state key="normal" title="Traduction">
+                                        <state key="normal" title="Ouvrir le traducteur">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="6gy-Ww-ohw" kind="show" id="VxR-xe-lef"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -91,7 +100,7 @@
                             <constraint firstItem="pgx-NO-yxz" firstAttribute="trailing" secondItem="HV1-qz-Yod" secondAttribute="trailing" constant="20" id="vZ3-Tr-woC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="Ffe-vu-K4x"/>
+                    <navigationItem key="navigationItem" title="Accueil" id="Ffe-vu-K4x"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JG0-8v-y8x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,10 +150,11 @@
                             <constraint firstItem="U1M-cT-JWE" firstAttribute="bottom" secondItem="GBs-md-a7f" secondAttribute="bottom" constant="30" id="jaj-OQ-7zq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SUv-mX-hkF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5f-23-T4n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-862.31884057971024" y="-272.54464285714283"/>
+            <point key="canvasLocation" x="-917" y="-277"/>
         </scene>
         <!--Traductor View Controller-->
         <scene sceneID="CRI-du-iKP">
@@ -190,10 +200,11 @@
                             <constraint firstItem="BFG-Tu-BKI" firstAttribute="bottom" secondItem="elV-fT-zRD" secondAttribute="bottom" constant="30" id="dxS-wv-LOP"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sFX-bh-RHF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpO-9G-gsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-817" y="522"/>
+            <point key="canvasLocation" x="-916" y="522"/>
         </scene>
         <!--Change Rate View Controller-->
         <scene sceneID="blv-Px-Ms1">
@@ -239,10 +250,11 @@
                             <constraint firstItem="x91-M5-pdq" firstAttribute="leading" secondItem="48i-0m-DGP" secondAttribute="leading" constant="20" id="arI-U5-ZzF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="KNJ-5Y-RTS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bm0-cY-QaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-93" y="116"/>
+            <point key="canvasLocation" x="-187" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DBU-mB-tNH">
