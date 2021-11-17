@@ -22,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoBaluchon" translatesAutoresizingMaskIntoConstraints="NO" id="EQP-gr-yeT">
-                                <rect key="frame" x="20" y="44" width="374" height="374"/>
+                                <rect key="frame" x="20" y="64" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EQP-gr-yeT" secondAttribute="height" multiplier="1:1" id="g0F-qR-Ero"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="33" translatesAutoresizingMaskIntoConstraints="NO" id="eWM-ea-Gzr">
-                                <rect key="frame" x="20" y="428" width="374" height="113"/>
+                                <rect key="frame" x="20" y="448" width="374" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="Poo-zI-Ff8"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eWM-ea-Gzr" firstAttribute="top" secondItem="EQP-gr-yeT" secondAttribute="bottom" constant="10" id="9GI-oA-d17"/>
-                            <constraint firstItem="EQP-gr-yeT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jcu-Ub-koR"/>
+                            <constraint firstItem="EQP-gr-yeT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Jcu-Ub-koR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eWM-ea-Gzr" secondAttribute="trailing" constant="20" id="bV9-EF-bi5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EQP-gr-yeT" secondAttribute="trailing" constant="20" id="nMb-qE-xUd"/>
                             <constraint firstItem="EQP-gr-yeT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tbA-3e-FZg"/>

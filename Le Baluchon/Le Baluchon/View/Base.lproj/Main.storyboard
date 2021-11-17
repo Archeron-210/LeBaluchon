@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wpi-CA-u1y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -7,24 +7,117 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nickainley-Normal.otf">
+            <string>Nickainley-Normal</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Welcome-->
+        <scene sceneID="8yE-8m-O62">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="C6i-Kf-8Xh" customClass="WelcomeViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zKT-ld-ENn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuO-wX-VlF">
+                                <rect key="frame" x="20" y="88" width="374" height="57"/>
+                                <fontDescription key="fontDescription" name="Nickainley-Normal" family="Nickainley" pointSize="45"/>
+                                <color key="textColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="bv3-HY-WGK" userLabel="Buttons Stack View">
+                                <rect key="frame" x="30" y="256" width="354" height="354"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGy-zH-sEr">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="95.5"/>
+                                        <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
+                                        <state key="normal" title="Météo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yK3-mS-pB5">
+                                        <rect key="frame" x="0.0" y="129.5" width="354" height="95"/>
+                                        <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
+                                        <state key="normal" title="Taux de change">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLk-Pp-0FM">
+                                        <rect key="frame" x="0.0" y="258.5" width="354" height="95.5"/>
+                                        <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
+                                        <state key="normal" title="Traduction">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bv3-HY-WGK" secondAttribute="height" multiplier="1:1" id="Np0-bk-bew"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Bienvenue !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wus-lu-VJH">
+                                <rect key="frame" x="20" y="185" width="374" height="31"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="27"/>
+                                <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="LogoBaluchon" translatesAutoresizingMaskIntoConstraints="NO" id="8Vc-Wq-DrC">
+                                <rect key="frame" x="129" y="640" width="156" height="156"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8Vc-Wq-DrC" secondAttribute="height" multiplier="1:1" id="P22-fm-7IE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pgx-NO-yxz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Vc-Wq-DrC" firstAttribute="leading" secondItem="pgx-NO-yxz" secondAttribute="leading" constant="129" id="2Ly-Dw-i80"/>
+                            <constraint firstItem="Wus-lu-VJH" firstAttribute="leading" secondItem="pgx-NO-yxz" secondAttribute="leading" constant="20" id="4jn-F6-2dS"/>
+                            <constraint firstItem="bv3-HY-WGK" firstAttribute="top" secondItem="Wus-lu-VJH" secondAttribute="bottom" constant="40" id="Arh-KW-I5U"/>
+                            <constraint firstItem="8Vc-Wq-DrC" firstAttribute="top" secondItem="bv3-HY-WGK" secondAttribute="bottom" constant="30" id="POy-wZ-Q19"/>
+                            <constraint firstItem="pgx-NO-yxz" firstAttribute="trailing" secondItem="Wus-lu-VJH" secondAttribute="trailing" constant="20" id="QFk-8l-Eqd"/>
+                            <constraint firstItem="pgx-NO-yxz" firstAttribute="trailing" secondItem="bv3-HY-WGK" secondAttribute="trailing" constant="30" id="Zsf-gW-oLB"/>
+                            <constraint firstItem="xuO-wX-VlF" firstAttribute="leading" secondItem="pgx-NO-yxz" secondAttribute="leading" constant="20" id="cy8-9B-swv"/>
+                            <constraint firstItem="Wus-lu-VJH" firstAttribute="top" secondItem="xuO-wX-VlF" secondAttribute="bottom" constant="40" id="d1u-Uc-asA"/>
+                            <constraint firstItem="bv3-HY-WGK" firstAttribute="leading" secondItem="pgx-NO-yxz" secondAttribute="leading" constant="30" id="gyl-Ay-q8K"/>
+                            <constraint firstItem="pgx-NO-yxz" firstAttribute="trailing" secondItem="xuO-wX-VlF" secondAttribute="trailing" constant="20" id="oh3-3b-lf8"/>
+                            <constraint firstItem="xuO-wX-VlF" firstAttribute="top" secondItem="pgx-NO-yxz" secondAttribute="top" id="plm-hC-M6t"/>
+                            <constraint firstItem="pgx-NO-yxz" firstAttribute="trailing" secondItem="8Vc-Wq-DrC" secondAttribute="trailing" constant="129" id="vUa-ZJ-bi7"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Welcome" id="Ffe-vu-K4x"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JG0-8v-y8x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7" y="92"/>
+            <point key="canvasLocation" x="-783" y="112"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DBU-mB-tNH">
+            <objects>
+                <navigationController id="wpi-CA-u1y" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="weS-E3-QTK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="C6i-Kf-8Xh" kind="relationship" relationship="rootViewController" id="akM-ya-2gb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JtP-Ow-OZ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1559" y="112"/>
         </scene>
     </scenes>
     <resources>
+        <image name="LogoBaluchon" width="166.5" height="166.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

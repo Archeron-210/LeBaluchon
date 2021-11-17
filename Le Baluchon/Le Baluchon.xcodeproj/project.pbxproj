@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		201D6BE52742B61800C11EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D6BE42742B61800C11EB1 /* AppDelegate.swift */; };
 		201D6BE72742B61800C11EB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D6BE62742B61800C11EB1 /* SceneDelegate.swift */; };
-		201D6BE92742B61800C11EB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D6BE82742B61800C11EB1 /* ViewController.swift */; };
 		201D6BEC2742B61800C11EB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BEA2742B61800C11EB1 /* Main.storyboard */; };
 		201D6BEE2742B62300C11EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BED2742B62300C11EB1 /* Assets.xcassets */; };
 		201D6BF12742B62300C11EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BEF2742B62300C11EB1 /* LaunchScreen.storyboard */; };
 		201D6BFC2742B62400C11EB1 /* Le_BaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D6BFB2742B62400C11EB1 /* Le_BaluchonTests.swift */; };
 		201D6C222742CBF300C11EB1 /* Nickainley-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = 201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */; };
+		20F8B1E427451679008B1518 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B1E327451678008B1518 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		201D6BE12742B61800C11EB1 /* Le Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Le Baluchon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		201D6BE42742B61800C11EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		201D6BE62742B61800C11EB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		201D6BE82742B61800C11EB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		201D6BEB2742B61800C11EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		201D6BED2742B62300C11EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		201D6BF02742B62300C11EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		201D6BFD2742B62400C11EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201D6C022742B62400C11EB1 /* Le BaluchonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le BaluchonUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nickainley-Normal.otf"; sourceTree = "<group>"; };
+		20F8B1E327451678008B1518 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +132,7 @@
 		201D6C1C2742B87C00C11EB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				201D6BE82742B61800C11EB1 /* ViewController.swift */,
+				20F8B1E327451678008B1518 /* WelcomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				201D6BE92742B61800C11EB1 /* ViewController.swift in Sources */,
+				20F8B1E427451679008B1518 /* WelcomeViewController.swift in Sources */,
 				201D6BE52742B61800C11EB1 /* AppDelegate.swift in Sources */,
 				201D6BE72742B61800C11EB1 /* SceneDelegate.swift in Sources */,
 			);
