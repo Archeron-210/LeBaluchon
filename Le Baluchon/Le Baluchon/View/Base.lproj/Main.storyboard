@@ -171,20 +171,46 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dze-Id-Nht" userLabel="Translation Stack View">
+                                <rect key="frame" x="20" y="282.5" width="374" height="374"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Bonjour !" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-hH-GKh">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="321.5"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue"/>
+                                    </textView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-S6-u3R">
+                                        <rect key="frame" x="0.0" y="329.5" width="374" height="45.5"/>
+                                        <segments>
+                                            <segment title="Français"/>
+                                            <segment title="Anglais"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dze-Id-Nht" secondAttribute="height" multiplier="1:1" id="9G7-kl-Fns"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BFG-Tu-BKI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dze-Id-Nht" firstAttribute="leading" secondItem="BFG-Tu-BKI" secondAttribute="leading" constant="20" id="1K2-To-BmW"/>
                             <constraint firstItem="bhB-pi-gFF" firstAttribute="top" secondItem="BFG-Tu-BKI" secondAttribute="top" constant="10" id="2ix-UQ-lFh"/>
                             <constraint firstItem="BFG-Tu-BKI" firstAttribute="trailing" secondItem="bhB-pi-gFF" secondAttribute="trailing" constant="20" id="Ule-iy-Ojx"/>
                             <constraint firstItem="bhB-pi-gFF" firstAttribute="leading" secondItem="BFG-Tu-BKI" secondAttribute="leading" constant="20" id="YTd-U7-rar"/>
+                            <constraint firstItem="BFG-Tu-BKI" firstAttribute="trailing" secondItem="dze-Id-Nht" secondAttribute="trailing" constant="20" id="hEe-2b-rAq"/>
+                            <constraint firstItem="dze-Id-Nht" firstAttribute="top" secondItem="bhB-pi-gFF" secondAttribute="bottom" constant="75" id="w0w-Dk-4Cl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sFX-bh-RHF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpO-9G-gsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-916" y="522"/>
+            <point key="canvasLocation" x="-917.39130434782612" y="521.65178571428567"/>
         </scene>
         <!--Change Rate View Controller-->
         <scene sceneID="blv-Px-Ms1">
@@ -292,6 +318,9 @@
         <image name="LogoBaluchon" width="166.5" height="166.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
