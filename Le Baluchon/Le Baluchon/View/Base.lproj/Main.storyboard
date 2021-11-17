@@ -211,20 +211,61 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xjo-KV-yJG" userLabel="Eur/USD Stack View">
+                                <rect key="frame" x="20" y="282.5" width="374" height="310"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros €" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsi-KS-RRg">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
+                                        <color key="textColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="20,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rb3-cB-3ll">
+                                        <rect key="frame" x="0.0" y="65" width="374" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="continue" smartInsertDeleteType="no"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollars $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdP-4N-FD8">
+                                        <rect key="frame" x="0.0" y="130" width="374" height="50"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
+                                        <color key="textColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="20,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9K3-MV-Gq5">
+                                        <rect key="frame" x="0.0" y="195" width="374" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="continue" smartInsertDeleteType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssn-Jg-kZe">
+                                        <rect key="frame" x="0.0" y="260" width="374" height="50"/>
+                                        <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Ueq-qr-ouN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="30"/>
+                                        <state key="normal" title="Convertir">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="48i-0m-DGP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="48i-0m-DGP" firstAttribute="trailing" secondItem="Lkr-fr-S7b" secondAttribute="trailing" constant="20" id="LLu-2l-nHS"/>
                             <constraint firstItem="Lkr-fr-S7b" firstAttribute="top" secondItem="48i-0m-DGP" secondAttribute="top" constant="10" id="aJO-MK-Ml7"/>
+                            <constraint firstItem="48i-0m-DGP" firstAttribute="trailing" secondItem="xjo-KV-yJG" secondAttribute="trailing" constant="20" id="jCP-L8-U2J"/>
+                            <constraint firstItem="xjo-KV-yJG" firstAttribute="leading" secondItem="48i-0m-DGP" secondAttribute="leading" constant="20" id="l9X-9L-BVT"/>
                             <constraint firstItem="Lkr-fr-S7b" firstAttribute="leading" secondItem="48i-0m-DGP" secondAttribute="leading" constant="20" id="r6Y-nk-1Yl"/>
+                            <constraint firstItem="xjo-KV-yJG" firstAttribute="top" secondItem="Lkr-fr-S7b" secondAttribute="bottom" constant="75" id="t1v-81-VN1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KNJ-5Y-RTS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bm0-cY-QaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-187" y="112"/>
+            <point key="canvasLocation" x="-188.40579710144928" y="111.83035714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DBU-mB-tNH">
