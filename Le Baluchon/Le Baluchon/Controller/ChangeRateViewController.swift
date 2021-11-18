@@ -6,6 +6,7 @@ class ChangeRateViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var eurosTextField: UITextField!
     @IBOutlet weak var dollarsTextField: UITextField!
+    @IBOutlet weak var convertButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBAction func toggleConvertButton(_ sender: UIButton) {
@@ -14,6 +15,8 @@ class ChangeRateViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        activityIndicator.isHidden = true
+        convertButton.layer.cornerRadius = 25.0
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

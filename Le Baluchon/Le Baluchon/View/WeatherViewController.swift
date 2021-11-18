@@ -10,6 +10,8 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var homeTemperatureLabel: UILabel!
     @IBOutlet weak var homeWeatherIcon: UIImageView!
 
+    @IBOutlet weak var refreshButton: UIButton!
+
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     
@@ -21,7 +23,8 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        activityIndicator.isHidden = true
+        refreshButton.layer.cornerRadius = 25.0
 
     }
 }

@@ -6,6 +6,7 @@ class TraductorViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var languageSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 
@@ -14,6 +15,9 @@ class TraductorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        activityIndicator.isHidden = true
+        translateButton.layer.cornerRadius = 25.0
 
     }
 
