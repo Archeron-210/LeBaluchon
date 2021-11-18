@@ -1,29 +1,27 @@
-//
-//  WeatherViewController.swift
-//  Le Baluchon
-//
-//  Created by Archeron on 17/11/2021.
-//
 
 import UIKit
 
 class WeatherViewController: UIViewController {
 
+
+    @IBOutlet weak var nycTemperatureLabel: UILabel!
+    @IBOutlet weak var nycWeatherIcon: UIImageView!
+
+    @IBOutlet weak var homeTemperatureLabel: UILabel!
+    @IBOutlet weak var homeWeatherIcon: UIImageView!
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+    
+
+    @IBAction func toggleRefreshButton(_ sender: UIButton) {
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
+
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

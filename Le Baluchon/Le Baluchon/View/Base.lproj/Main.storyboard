@@ -131,9 +131,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kr4-dd-4Xz">
-                                <rect key="frame" x="188.5" y="696" width="37" height="37"/>
-                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="05K-e4-ksW" userLabel="Global Stack View">
                                 <rect key="frame" x="20" y="247.5" width="374" height="492"/>
                                 <subviews>
@@ -203,6 +200,9 @@
                                         <state key="normal" title="Rafraîchir">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="toggleRefreshButton:" destination="vey-aV-VdI" eventType="touchUpInside" id="ryc-cw-S4m"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -219,6 +219,9 @@
                                     <constraint firstItem="mXr-R7-M0h" firstAttribute="width" secondItem="8KN-MB-YcW" secondAttribute="width" id="m56-RO-X0q"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kr4-dd-4Xz">
+                                <rect key="frame" x="188.5" y="696" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U1M-cT-JWE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -234,6 +237,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SUv-mX-hkF"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="kr4-dd-4Xz" id="Aww-oq-iJA"/>
+                        <outlet property="homeTemperatureLabel" destination="WLR-1Y-lTp" id="ku5-3p-uCu"/>
+                        <outlet property="homeWeatherIcon" destination="mXr-R7-M0h" id="i8x-yW-4Il"/>
+                        <outlet property="nycTemperatureLabel" destination="yqQ-4G-NHO" id="6Ct-lg-PzI"/>
+                        <outlet property="nycWeatherIcon" destination="8KN-MB-YcW" id="o5f-qp-zKt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5f-23-T4n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,6 +311,9 @@
                                         <state key="normal" title="Traduire">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="toggleTranslationButton:" destination="6gy-Ww-ohw" eventType="touchUpInside" id="fJg-Et-dg5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -329,6 +342,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sFX-bh-RHF"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="iaA-aW-YUv" id="Utk-GH-WC4"/>
+                        <outlet property="languageSegmentedControl" destination="VKW-S6-u3R" id="fem-a6-tqF"/>
+                        <outlet property="textView" destination="Ret-hH-GKh" id="lgz-NU-Gg3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpO-9G-gsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -394,6 +412,9 @@
                                         <state key="normal" title="Convertir">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="toggleConvertButton:" destination="Ofq-YI-1qj" eventType="touchUpInside" id="pDm-y0-C3I"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -415,6 +436,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KNJ-5Y-RTS"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="LWk-JM-WH2" id="e4m-YH-fJx"/>
+                        <outlet property="dollarsTextField" destination="9K3-MV-Gq5" id="JLM-cR-CUU"/>
+                        <outlet property="eurosTextField" destination="Rb3-cB-3ll" id="E0G-Py-QfW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bm0-cY-QaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
