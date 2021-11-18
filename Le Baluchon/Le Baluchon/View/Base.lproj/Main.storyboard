@@ -196,7 +196,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="lFH-kY-EM7"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="30"/>
                                         <state key="normal" title="Rafraîchir">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -208,10 +208,14 @@
                                     <constraint firstItem="v3S-8F-Lnw" firstAttribute="leading" secondItem="hC6-82-VUm" secondAttribute="leading" id="BUv-PX-eRV"/>
                                     <constraint firstItem="hC6-82-VUm" firstAttribute="leading" secondItem="05K-e4-ksW" secondAttribute="leading" id="FhO-wG-Jja"/>
                                     <constraint firstItem="v3S-8F-Lnw" firstAttribute="trailing" secondItem="hC6-82-VUm" secondAttribute="trailing" id="MO5-ku-R6v"/>
+                                    <constraint firstItem="ksj-Y3-JJg" firstAttribute="leading" secondItem="05K-e4-ksW" secondAttribute="leading" id="QDA-s8-JqH"/>
                                     <constraint firstAttribute="trailing" secondItem="hC6-82-VUm" secondAttribute="trailing" id="QyO-FI-DZv"/>
                                     <constraint firstItem="hC6-82-VUm" firstAttribute="top" secondItem="05K-e4-ksW" secondAttribute="top" id="fWz-L8-3GB"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kr4-dd-4Xz">
+                                <rect key="frame" x="188.5" y="611.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U1M-cT-JWE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -219,10 +223,12 @@
                             <constraint firstItem="U1M-cT-JWE" firstAttribute="trailing" secondItem="05K-e4-ksW" secondAttribute="trailing" constant="20" id="2d6-bF-KZn"/>
                             <constraint firstItem="05K-e4-ksW" firstAttribute="leading" secondItem="U1M-cT-JWE" secondAttribute="leading" constant="20" id="CIH-op-zPw"/>
                             <constraint firstItem="xyw-nR-hJk" firstAttribute="leading" secondItem="U1M-cT-JWE" secondAttribute="leading" constant="20" id="MkT-Zf-xKP"/>
+                            <constraint firstItem="kr4-dd-4Xz" firstAttribute="centerX" secondItem="o7Z-eq-Rz2" secondAttribute="centerX" id="NOB-c0-dS7"/>
                             <constraint firstItem="U1M-cT-JWE" firstAttribute="trailing" secondItem="xyw-nR-hJk" secondAttribute="trailing" constant="20" id="RRC-1e-Ze3"/>
                             <constraint firstItem="xyw-nR-hJk" firstAttribute="top" secondItem="U1M-cT-JWE" secondAttribute="top" constant="10" id="UpM-Jr-tBW"/>
                             <constraint firstItem="05K-e4-ksW" firstAttribute="centerY" secondItem="tz7-pH-96q" secondAttribute="centerY" id="Xlv-pW-riR"/>
                             <constraint firstItem="05K-e4-ksW" firstAttribute="centerX" secondItem="tz7-pH-96q" secondAttribute="centerX" id="hYd-XY-eRq"/>
+                            <constraint firstItem="kr4-dd-4Xz" firstAttribute="centerY" secondItem="o7Z-eq-Rz2" secondAttribute="centerY" id="rMf-D2-586"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SUv-mX-hkF"/>
@@ -259,34 +265,63 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dze-Id-Nht" userLabel="Translation Stack View">
                                 <rect key="frame" x="20" y="282.5" width="374" height="374"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Bonjour !" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-hH-GKh">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="321.5"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Bonjour !" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-hH-GKh">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="230"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="230" id="5X0-12-Kba"/>
+                                        </constraints>
                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduire vers :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBZ-ZC-qtf">
+                                        <rect key="frame" x="0.0" y="238" width="374" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="25"/>
+                                        <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-S6-u3R">
-                                        <rect key="frame" x="0.0" y="329.5" width="374" height="45.5"/>
+                                        <rect key="frame" x="0.0" y="275.5" width="374" height="41.5"/>
                                         <segments>
                                             <segment title="Français"/>
                                             <segment title="Anglais"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muw-OH-stX">
+                                        <rect key="frame" x="0.0" y="324" width="374" height="50"/>
+                                        <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="AAe-d8-So5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="30"/>
+                                        <state key="normal" title="Traduire">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Ret-hH-GKh" firstAttribute="leading" secondItem="dze-Id-Nht" secondAttribute="leading" id="4uP-wa-nqb"/>
                                     <constraint firstAttribute="width" secondItem="dze-Id-Nht" secondAttribute="height" multiplier="1:1" id="9G7-kl-Fns"/>
+                                    <constraint firstItem="SBZ-ZC-qtf" firstAttribute="top" secondItem="Ret-hH-GKh" secondAttribute="bottom" constant="8" id="AbI-1U-TaS"/>
+                                    <constraint firstItem="Ret-hH-GKh" firstAttribute="top" secondItem="dze-Id-Nht" secondAttribute="top" id="Lbb-ZC-TSz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ret-hH-GKh" secondAttribute="trailing" id="aZt-5x-xXA"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="iaA-aW-YUv">
+                                <rect key="frame" x="188.5" y="613" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BFG-Tu-BKI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dze-Id-Nht" firstAttribute="leading" secondItem="BFG-Tu-BKI" secondAttribute="leading" constant="20" id="1K2-To-BmW"/>
                             <constraint firstItem="bhB-pi-gFF" firstAttribute="top" secondItem="BFG-Tu-BKI" secondAttribute="top" constant="10" id="2ix-UQ-lFh"/>
+                            <constraint firstItem="iaA-aW-YUv" firstAttribute="centerX" secondItem="Muw-OH-stX" secondAttribute="centerX" id="4Ba-hl-yhQ"/>
                             <constraint firstItem="BFG-Tu-BKI" firstAttribute="trailing" secondItem="bhB-pi-gFF" secondAttribute="trailing" constant="20" id="Ule-iy-Ojx"/>
                             <constraint firstItem="bhB-pi-gFF" firstAttribute="leading" secondItem="BFG-Tu-BKI" secondAttribute="leading" constant="20" id="YTd-U7-rar"/>
+                            <constraint firstItem="iaA-aW-YUv" firstAttribute="centerY" secondItem="Muw-OH-stX" secondAttribute="centerY" id="diY-2L-0GW"/>
                             <constraint firstItem="BFG-Tu-BKI" firstAttribute="trailing" secondItem="dze-Id-Nht" secondAttribute="trailing" constant="20" id="hEe-2b-rAq"/>
                             <constraint firstItem="dze-Id-Nht" firstAttribute="top" secondItem="bhB-pi-gFF" secondAttribute="bottom" constant="75" id="w0w-Dk-4Cl"/>
                         </constraints>
@@ -360,13 +395,18 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LWk-JM-WH2">
+                                <rect key="frame" x="188.5" y="549" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="48i-0m-DGP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="48i-0m-DGP" firstAttribute="trailing" secondItem="Lkr-fr-S7b" secondAttribute="trailing" constant="20" id="LLu-2l-nHS"/>
+                            <constraint firstItem="LWk-JM-WH2" firstAttribute="centerY" secondItem="Ssn-Jg-kZe" secondAttribute="centerY" id="UK3-Qa-bbL"/>
                             <constraint firstItem="Lkr-fr-S7b" firstAttribute="top" secondItem="48i-0m-DGP" secondAttribute="top" constant="10" id="aJO-MK-Ml7"/>
                             <constraint firstItem="48i-0m-DGP" firstAttribute="trailing" secondItem="xjo-KV-yJG" secondAttribute="trailing" constant="20" id="jCP-L8-U2J"/>
+                            <constraint firstItem="LWk-JM-WH2" firstAttribute="centerX" secondItem="Ssn-Jg-kZe" secondAttribute="centerX" id="jzf-t4-3tB"/>
                             <constraint firstItem="xjo-KV-yJG" firstAttribute="leading" secondItem="48i-0m-DGP" secondAttribute="leading" constant="20" id="l9X-9L-BVT"/>
                             <constraint firstItem="Lkr-fr-S7b" firstAttribute="leading" secondItem="48i-0m-DGP" secondAttribute="leading" constant="20" id="r6Y-nk-1Yl"/>
                             <constraint firstItem="xjo-KV-yJG" firstAttribute="top" secondItem="Lkr-fr-S7b" secondAttribute="bottom" constant="75" id="t1v-81-VN1"/>
