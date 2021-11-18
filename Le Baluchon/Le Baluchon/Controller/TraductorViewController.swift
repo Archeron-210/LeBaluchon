@@ -17,5 +17,8 @@ class TraductorViewController: UIViewController {
 
     }
 
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        textView.resignFirstResponder()
+    }
 
 }

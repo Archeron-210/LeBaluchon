@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ChangeRateViewController: UIViewController {
+class ChangeRateViewController: UIViewController, UITextFieldDelegate {
 
 
     @IBOutlet weak var eurosTextField: UITextField!
@@ -14,6 +14,16 @@ class ChangeRateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        eurosTextField.resignFirstResponder()
+        dollarsTextField.resignFirstResponder()
     }
 
 }

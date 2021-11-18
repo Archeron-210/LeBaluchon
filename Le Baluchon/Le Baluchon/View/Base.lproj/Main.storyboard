@@ -285,7 +285,10 @@
                                         </constraints>
                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="6gy-Ww-ohw" id="Ku8-E6-Wzt"/>
+                                        </connections>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduire vers :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBZ-ZC-qtf">
                                         <rect key="frame" x="0.0" y="238" width="374" height="29.5"/>
@@ -330,6 +333,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BFG-Tu-BKI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="dze-Id-Nht" firstAttribute="leading" secondItem="BFG-Tu-BKI" secondAttribute="leading" constant="20" id="1K2-To-BmW"/>
                             <constraint firstItem="bhB-pi-gFF" firstAttribute="top" secondItem="BFG-Tu-BKI" secondAttribute="top" constant="10" id="2ix-UQ-lFh"/>
@@ -340,6 +344,9 @@
                             <constraint firstItem="BFG-Tu-BKI" firstAttribute="trailing" secondItem="dze-Id-Nht" secondAttribute="trailing" constant="20" id="hEe-2b-rAq"/>
                             <constraint firstItem="dze-Id-Nht" firstAttribute="top" secondItem="bhB-pi-gFF" secondAttribute="bottom" constant="75" id="w0w-Dk-4Cl"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ptZ-75-Ayr" appends="YES" id="j8g-Xc-Ixs"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="sFX-bh-RHF"/>
                     <connections>
@@ -349,6 +356,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpO-9G-gsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ptZ-75-Ayr">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="6gy-Ww-ohw" id="RzQ-0V-sOz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-917.39130434782612" y="521.65178571428567"/>
         </scene>
@@ -389,7 +401,10 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="20,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rb3-cB-3ll">
                                         <rect key="frame" x="0.0" y="65" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="continue" smartInsertDeleteType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="continue" smartInsertDeleteType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Ofq-YI-1qj" id="put-Dr-jVH"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollars $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdP-4N-FD8">
                                         <rect key="frame" x="0.0" y="130" width="374" height="50"/>
@@ -400,7 +415,10 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="20,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9K3-MV-Gq5">
                                         <rect key="frame" x="0.0" y="195" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="continue" smartInsertDeleteType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="continue" smartInsertDeleteType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Ofq-YI-1qj" id="VXq-6f-zM8"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssn-Jg-kZe">
                                         <rect key="frame" x="0.0" y="260" width="374" height="50"/>
@@ -424,6 +442,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="48i-0m-DGP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="48i-0m-DGP" firstAttribute="trailing" secondItem="Lkr-fr-S7b" secondAttribute="trailing" constant="20" id="LLu-2l-nHS"/>
                             <constraint firstItem="LWk-JM-WH2" firstAttribute="centerY" secondItem="Ssn-Jg-kZe" secondAttribute="centerY" id="UK3-Qa-bbL"/>
@@ -434,6 +453,9 @@
                             <constraint firstItem="Lkr-fr-S7b" firstAttribute="leading" secondItem="48i-0m-DGP" secondAttribute="leading" constant="20" id="r6Y-nk-1Yl"/>
                             <constraint firstItem="xjo-KV-yJG" firstAttribute="top" secondItem="Lkr-fr-S7b" secondAttribute="bottom" constant="75" id="t1v-81-VN1"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="68Z-Nl-1kh" appends="YES" id="M2t-Jm-WnX"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="KNJ-5Y-RTS"/>
                     <connections>
@@ -443,6 +465,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bm0-cY-QaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="68Z-Nl-1kh">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="Ofq-YI-1qj" id="9E2-dp-0fg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-188.40579710144928" y="111.83035714285714"/>
         </scene>
