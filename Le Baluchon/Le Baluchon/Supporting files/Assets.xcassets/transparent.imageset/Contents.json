@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "LogoBaluchon@1x.png",
+      "filename" : "transparent@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "LogoBaluchon@2x.png",
+      "filename" : "transparent@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "LogoBaluchon@3x.png",
+      "filename" : "transparent@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
