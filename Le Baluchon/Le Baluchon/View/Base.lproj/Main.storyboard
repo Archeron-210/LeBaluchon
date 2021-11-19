@@ -39,11 +39,11 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="bv3-HY-WGK" userLabel="Buttons Stack View">
-                                <rect key="frame" x="20" y="261" width="374" height="374"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bv3-HY-WGK" userLabel="Buttons Stack View">
+                                <rect key="frame" x="20" y="247.5" width="374" height="374"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGy-zH-sEr">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="102"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="104.5"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yK3-mS-pB5">
-                                        <rect key="frame" x="0.0" y="136" width="374" height="102"/>
+                                        <rect key="frame" x="0.0" y="134.5" width="374" height="105"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,7 +74,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLk-Pp-0FM">
-                                        <rect key="frame" x="0.0" y="272" width="374" height="102"/>
+                                        <rect key="frame" x="0.0" y="269.5" width="374" height="104.5"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,11 +98,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HV1-qz-Yod" firstAttribute="leading" secondItem="pgx-NO-yxz" secondAttribute="leading" constant="20" id="1zd-9o-yQR"/>
+                            <constraint firstItem="bv3-HY-WGK" firstAttribute="top" secondItem="HV1-qz-Yod" secondAttribute="bottom" constant="40" id="S3E-TM-ihi"/>
                             <constraint firstItem="pgx-NO-yxz" firstAttribute="trailing" secondItem="bv3-HY-WGK" secondAttribute="trailing" constant="20" id="VAD-Kx-Idt"/>
                             <constraint firstItem="bv3-HY-WGK" firstAttribute="leading" secondItem="pgx-NO-yxz" secondAttribute="leading" constant="20" id="YJI-Ss-DWa"/>
-                            <constraint firstItem="bv3-HY-WGK" firstAttribute="centerX" secondItem="zKT-ld-ENn" secondAttribute="centerX" id="bcW-sL-dA3"/>
                             <constraint firstItem="HV1-qz-Yod" firstAttribute="top" secondItem="pgx-NO-yxz" secondAttribute="top" constant="10" id="enc-9I-0fn"/>
-                            <constraint firstItem="bv3-HY-WGK" firstAttribute="centerY" secondItem="zKT-ld-ENn" secondAttribute="centerY" id="qDd-iv-6Sb"/>
                             <constraint firstItem="pgx-NO-yxz" firstAttribute="trailing" secondItem="HV1-qz-Yod" secondAttribute="trailing" constant="20" id="vZ3-Tr-woC"/>
                         </constraints>
                     </view>
@@ -285,7 +284,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dze-Id-Nht" userLabel="Translation Stack View">
-                                <rect key="frame" x="20" y="282.5" width="374" height="374"/>
+                                <rect key="frame" x="20" y="247.5" width="374" height="374"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Bonjour !" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-hH-GKh">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="230"/>
@@ -338,7 +337,7 @@
                                 </constraints>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="iaA-aW-YUv">
-                                <rect key="frame" x="188.5" y="613" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="578" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BFG-Tu-BKI"/>
@@ -352,7 +351,7 @@
                             <constraint firstItem="bhB-pi-gFF" firstAttribute="leading" secondItem="BFG-Tu-BKI" secondAttribute="leading" constant="20" id="YTd-U7-rar"/>
                             <constraint firstItem="iaA-aW-YUv" firstAttribute="centerY" secondItem="Muw-OH-stX" secondAttribute="centerY" id="diY-2L-0GW"/>
                             <constraint firstItem="BFG-Tu-BKI" firstAttribute="trailing" secondItem="dze-Id-Nht" secondAttribute="trailing" constant="20" id="hEe-2b-rAq"/>
-                            <constraint firstItem="dze-Id-Nht" firstAttribute="top" secondItem="bhB-pi-gFF" secondAttribute="bottom" constant="75" id="w0w-Dk-4Cl"/>
+                            <constraint firstItem="dze-Id-Nht" firstAttribute="top" secondItem="bhB-pi-gFF" secondAttribute="bottom" constant="40" id="w0w-Dk-4Cl"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ptZ-75-Ayr" appends="YES" id="j8g-Xc-Ixs"/>
@@ -401,7 +400,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xjo-KV-yJG" userLabel="Eur/USD Stack View">
-                                <rect key="frame" x="20" y="282.5" width="374" height="310"/>
+                                <rect key="frame" x="20" y="247.5" width="374" height="310"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros €" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsi-KS-RRg">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -448,7 +447,7 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LWk-JM-WH2">
-                                <rect key="frame" x="188.5" y="549" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="514" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="48i-0m-DGP"/>
@@ -462,7 +461,7 @@
                             <constraint firstItem="LWk-JM-WH2" firstAttribute="centerX" secondItem="Ssn-Jg-kZe" secondAttribute="centerX" id="jzf-t4-3tB"/>
                             <constraint firstItem="xjo-KV-yJG" firstAttribute="leading" secondItem="48i-0m-DGP" secondAttribute="leading" constant="20" id="l9X-9L-BVT"/>
                             <constraint firstItem="Lkr-fr-S7b" firstAttribute="leading" secondItem="48i-0m-DGP" secondAttribute="leading" constant="20" id="r6Y-nk-1Yl"/>
-                            <constraint firstItem="xjo-KV-yJG" firstAttribute="top" secondItem="Lkr-fr-S7b" secondAttribute="bottom" constant="75" id="t1v-81-VN1"/>
+                            <constraint firstItem="xjo-KV-yJG" firstAttribute="top" secondItem="Lkr-fr-S7b" secondAttribute="bottom" constant="40" id="t1v-81-VN1"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="68Z-Nl-1kh" appends="YES" id="M2t-Jm-WnX"/>
