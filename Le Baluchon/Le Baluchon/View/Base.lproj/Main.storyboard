@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wpi-CA-u1y">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -19,20 +19,20 @@
             <objects>
                 <viewController id="C6i-Kf-8Xh" customClass="WelcomeViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zKT-ld-ENn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HV1-qz-Yod" userLabel="Labels Stack View">
-                                <rect key="frame" x="20" y="98" width="374" height="109.5"/>
+                                <rect key="frame" x="20" y="54" width="280" height="109.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuO-wX-VlF">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="63.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="63.5"/>
                                         <fontDescription key="fontDescription" name="Nickainley-Normal" family="Nickainley" pointSize="50"/>
                                         <color key="textColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Bienvenue !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wus-lu-VJH">
-                                        <rect key="frame" x="0.0" y="78.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="78.5" width="280" height="31"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="27"/>
                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -40,10 +40,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bv3-HY-WGK" userLabel="Buttons Stack View">
-                                <rect key="frame" x="20" y="247.5" width="374" height="374"/>
+                                <rect key="frame" x="20" y="203.5" width="280" height="280"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGy-zH-sEr">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="104.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="73.5"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,12 +54,15 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
                                             </preferredSymbolConfiguration>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                        </variation>
                                         <connections>
                                             <segue destination="vey-aV-VdI" kind="show" id="mk0-0S-pbF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yK3-mS-pB5">
-                                        <rect key="frame" x="0.0" y="134.5" width="374" height="105"/>
+                                        <rect key="frame" x="0.0" y="103.5" width="280" height="73"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,12 +72,15 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                             </preferredSymbolConfiguration>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="15"/>
+                                        </variation>
                                         <connections>
                                             <segue destination="Ofq-YI-1qj" kind="show" id="rKi-3A-ncL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLk-Pp-0FM">
-                                        <rect key="frame" x="0.0" y="269.5" width="374" height="104.5"/>
+                                        <rect key="frame" x="0.0" y="206.5" width="280" height="73.5"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,6 +90,9 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                             </preferredSymbolConfiguration>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="16"/>
+                                        </variation>
                                         <connections>
                                             <segue destination="6gy-Ww-ohw" kind="show" id="VxR-xe-lef"/>
                                         </connections>
@@ -121,20 +130,20 @@
             <objects>
                 <viewController id="vey-aV-VdI" customClass="WeatherViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tz7-pH-96q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xyw-nR-hJk" userLabel="Labels Stack View">
-                                <rect key="frame" x="20" y="98" width="374" height="109.5"/>
+                                <rect key="frame" x="20" y="54" width="280" height="109.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvj-sV-fou">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="63.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="63.5"/>
                                         <fontDescription key="fontDescription" name="Nickainley-Normal" family="Nickainley" pointSize="50"/>
                                         <color key="textColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Météo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMU-3W-qnJ">
-                                        <rect key="frame" x="0.0" y="78.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="78.5" width="280" height="31"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="27"/>
                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -142,19 +151,19 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="05K-e4-ksW" userLabel="Global Stack View">
-                                <rect key="frame" x="20" y="247.5" width="374" height="492"/>
+                                <rect key="frame" x="20" y="183.5" width="280" height="358.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- À New York -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC6-82-VUm">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="32"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="25"/>
                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="ksj-Y3-JJg" userLabel="NYC Stack View">
-                                        <rect key="frame" x="0.0" y="43.5" width="374" height="173"/>
+                                        <rect key="frame" x="0.0" y="32" width="280" height="126"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqQ-4G-NHO">
-                                                <rect key="frame" x="0.0" y="0.0" width="173" height="173"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="yqQ-4G-NHO" secondAttribute="height" multiplier="1:1" id="1CG-uT-HOd"/>
                                                 </constraints>
@@ -163,7 +172,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8KN-MB-YcW">
-                                                <rect key="frame" x="201" y="-1.5" width="175.5" height="172"/>
+                                                <rect key="frame" x="154" y="-1.5" width="128.5" height="125"/>
                                                 <color key="tintColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="8KN-MB-YcW" secondAttribute="height" multiplier="1:1" id="P4C-kg-T30"/>
@@ -172,16 +181,16 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- À la maison -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3S-8F-Lnw">
-                                        <rect key="frame" x="0.0" y="216.5" width="374" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="158" width="280" height="24.5"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="25"/>
                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="A8c-DY-HJd" userLabel="Home Stack View">
-                                        <rect key="frame" x="0.0" y="269" width="374" height="173"/>
+                                        <rect key="frame" x="0.0" y="182.5" width="280" height="126"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLR-1Y-lTp">
-                                                <rect key="frame" x="0.0" y="0.0" width="173" height="173"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="WLR-1Y-lTp" secondAttribute="height" multiplier="1:1" id="1bd-N7-3Mp"/>
                                                 </constraints>
@@ -190,7 +199,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.bolt" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mXr-R7-M0h">
-                                                <rect key="frame" x="201" y="0.5" width="173" height="175"/>
+                                                <rect key="frame" x="154" y="0.5" width="126" height="128"/>
                                                 <color key="tintColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mXr-R7-M0h" secondAttribute="height" multiplier="1:1" id="ZqF-wo-JAR"/>
@@ -199,7 +208,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7Z-eq-Rz2">
-                                        <rect key="frame" x="0.0" y="442" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="308.5" width="280" height="50"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="lFH-kY-EM7"/>
@@ -228,7 +237,7 @@
                                 </constraints>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kr4-dd-4Xz">
-                                <rect key="frame" x="188.5" y="696" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="498.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U1M-cT-JWE"/>
@@ -241,8 +250,20 @@
                             <constraint firstItem="05K-e4-ksW" firstAttribute="top" secondItem="xyw-nR-hJk" secondAttribute="bottom" constant="40" id="R5p-eE-06k"/>
                             <constraint firstItem="U1M-cT-JWE" firstAttribute="trailing" secondItem="xyw-nR-hJk" secondAttribute="trailing" constant="20" id="RRC-1e-Ze3"/>
                             <constraint firstItem="xyw-nR-hJk" firstAttribute="top" secondItem="U1M-cT-JWE" secondAttribute="top" constant="10" id="UpM-Jr-tBW"/>
+                            <constraint firstItem="05K-e4-ksW" firstAttribute="top" secondItem="xyw-nR-hJk" secondAttribute="bottom" constant="20" id="VPl-aj-Mtz"/>
                             <constraint firstItem="kr4-dd-4Xz" firstAttribute="centerY" secondItem="o7Z-eq-Rz2" secondAttribute="centerY" id="rMf-D2-586"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="VPl-aj-Mtz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="R5p-eE-06k"/>
+                                <include reference="VPl-aj-Mtz"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="SUv-mX-hkF"/>
                     <connections>
@@ -263,20 +284,20 @@
             <objects>
                 <viewController id="6gy-Ww-ohw" customClass="TraductorViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P94-ex-nc0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bhB-pi-gFF" userLabel="Labels Stack View">
-                                <rect key="frame" x="20" y="98" width="374" height="109.5"/>
+                                <rect key="frame" x="20" y="54" width="280" height="109.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-gT-CSf">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="63.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="63.5"/>
                                         <fontDescription key="fontDescription" name="Nickainley-Normal" family="Nickainley" pointSize="50"/>
                                         <color key="textColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traducteur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cW-Wq-xha">
-                                        <rect key="frame" x="0.0" y="78.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="78.5" width="280" height="31"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="27"/>
                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -284,10 +305,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dze-Id-Nht" userLabel="Translation Stack View">
-                                <rect key="frame" x="20" y="247.5" width="374" height="374"/>
+                                <rect key="frame" x="20" y="203.5" width="280" height="280"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Bonjour !" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-hH-GKh">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="230"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="71.5"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="230" id="5X0-12-Kba"/>
@@ -300,13 +321,13 @@
                                         </connections>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduire vers :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBZ-ZC-qtf">
-                                        <rect key="frame" x="0.0" y="238" width="374" height="29.5"/>
+                                        <rect key="frame" x="0.0" y="79.5" width="280" height="46"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="25"/>
                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-S6-u3R">
-                                        <rect key="frame" x="0.0" y="275.5" width="374" height="41.5"/>
+                                        <rect key="frame" x="0.0" y="133.5" width="280" height="89.5"/>
                                         <segments>
                                             <segment title="Français"/>
                                             <segment title="Anglais"/>
@@ -314,7 +335,7 @@
                                         <color key="selectedSegmentTintColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muw-OH-stX">
-                                        <rect key="frame" x="0.0" y="324" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="230" width="280" height="50"/>
                                         <color key="backgroundColor" red="0.054901960784313725" green="0.59607843137254901" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="AAe-d8-So5"/>
@@ -337,7 +358,7 @@
                                 </constraints>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="iaA-aW-YUv">
-                                <rect key="frame" x="188.5" y="578" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="440" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BFG-Tu-BKI"/>
@@ -379,20 +400,20 @@
             <objects>
                 <viewController id="Ofq-YI-1qj" customClass="ChangeRateViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z6a-iW-zBB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lkr-fr-S7b" userLabel="Labels Stack View">
-                                <rect key="frame" x="20" y="98" width="374" height="109.5"/>
+                                <rect key="frame" x="20" y="54" width="280" height="104.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92g-0F-dny">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="63.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="58.5"/>
                                         <fontDescription key="fontDescription" name="Nickainley-Normal" family="Nickainley" pointSize="50"/>
                                         <color key="textColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taux de change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb8-0x-qS6">
-                                        <rect key="frame" x="0.0" y="78.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="73.5" width="280" height="31"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="27"/>
                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -400,16 +421,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xjo-KV-yJG" userLabel="Eur/USD Stack View">
-                                <rect key="frame" x="20" y="247.5" width="374" height="310"/>
+                                <rect key="frame" x="20" y="198.5" width="280" height="310"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros €" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsi-KS-RRg">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
                                         <color key="textColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="20,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rb3-cB-3ll">
-                                        <rect key="frame" x="0.0" y="65" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="65" width="280" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="continue" smartInsertDeleteType="no"/>
                                         <connections>
@@ -417,13 +438,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollars $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdP-4N-FD8">
-                                        <rect key="frame" x="0.0" y="130" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="130" width="280" height="50"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
                                         <color key="textColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="20,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9K3-MV-Gq5">
-                                        <rect key="frame" x="0.0" y="195" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="195" width="280" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="continue" smartInsertDeleteType="no"/>
                                         <connections>
@@ -431,7 +452,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssn-Jg-kZe">
-                                        <rect key="frame" x="0.0" y="260" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="260" width="280" height="50"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ueq-qr-ouN"/>
@@ -447,7 +468,7 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LWk-JM-WH2">
-                                <rect key="frame" x="188.5" y="514" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="465" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="48i-0m-DGP"/>
@@ -490,7 +511,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JtP-Ow-OZ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="wpi-CA-u1y" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="weS-E3-QTK">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
