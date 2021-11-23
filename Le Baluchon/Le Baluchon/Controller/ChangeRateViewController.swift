@@ -3,7 +3,13 @@ import UIKit
 
 class ChangeRateViewController: UIViewController {
 
-    var currentChangeRate: ChangeRate?
+    var currentChangeRate: ChangeRate? {
+        didSet {
+            DispatchQueue.main.async {
+                self.updateDollarsTextField()
+            }
+        }
+    }
 
 
     @IBOutlet weak var eurosTextField: UITextField!
@@ -13,13 +19,11 @@ class ChangeRateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         toggleActivityIndicator(shown: false)
         convertButton.layer.cornerRadius = 25.0
     }
     
     @IBAction func toggleConvertButton(_ sender: UIButton) {
-        obtainCurrentChangeRate()
         updateDollarsTextField()
     }
 
@@ -31,6 +35,8 @@ class ChangeRateViewController: UIViewController {
     private func convertEurtoUSD() -> String? {
 
         guard let changeRate = currentChangeRate else {
+            toggleActivityIndicator(shown: true)
+            obtainCurrentChangeRate()
             return nil
         }
         guard let eurosTextFieldText = eurosTextField.text else {
@@ -49,6 +55,9 @@ class ChangeRateViewController: UIViewController {
 
     private func obtainCurrentChangeRate() {
         ChangeRateService.shared.getChangeRate { result in
+            DispatchQueue.main.async {
+                self.toggleActivityIndicator(shown: false)
+            }
             switch result {
             case .failure:
                 DispatchQueue.main.async {
