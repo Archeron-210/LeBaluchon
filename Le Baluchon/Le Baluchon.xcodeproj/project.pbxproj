@@ -18,6 +18,10 @@
 		20F8B1F1274518A7008B1518 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B1F0274518A7008B1518 /* WeatherViewController.swift */; };
 		20F8B1F627451BC3008B1518 /* ChangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B1F527451BC3008B1518 /* ChangeRateViewController.swift */; };
 		20F8B1FB27451BE4008B1518 /* TraductorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B1FA27451BE4008B1518 /* TraductorViewController.swift */; };
+		20F8B203274BDDA7008B1518 /* ChangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B202274BDDA7008B1518 /* ChangeRateService.swift */; };
+		20F8B208274BDDCA008B1518 /* TraductorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B207274BDDCA008B1518 /* TraductorService.swift */; };
+		20F8B20D274BDDE2008B1518 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B20C274BDDE2008B1518 /* WeatherService.swift */; };
+		20F8B212274BE595008B1518 /* ChangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B211274BE595008B1518 /* ChangeRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		20F8B1F0274518A7008B1518 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = "Le Baluchon/View/WeatherViewController.swift"; sourceTree = SOURCE_ROOT; };
 		20F8B1F527451BC3008B1518 /* ChangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateViewController.swift; sourceTree = "<group>"; };
 		20F8B1FA27451BE4008B1518 /* TraductorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraductorViewController.swift; sourceTree = "<group>"; };
+		20F8B202274BDDA7008B1518 /* ChangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangeRateService.swift; path = "Le Baluchon/Controller/ChangeRateService.swift"; sourceTree = SOURCE_ROOT; };
+		20F8B207274BDDCA008B1518 /* TraductorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraductorService.swift; sourceTree = "<group>"; };
+		20F8B20C274BDDE2008B1518 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		20F8B211274BE595008B1518 /* ChangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,10 @@
 		201D6C1A2742B86900C11EB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				20F8B202274BDDA7008B1518 /* ChangeRateService.swift */,
+				20F8B211274BE595008B1518 /* ChangeRate.swift */,
+				20F8B207274BDDCA008B1518 /* TraductorService.swift */,
+				20F8B20C274BDDE2008B1518 /* WeatherService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,8 +150,8 @@
 		201D6C1C2742B87C00C11EB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				20F8B1F0274518A7008B1518 /* WeatherViewController.swift */,
 				20F8B1F527451BC3008B1518 /* ChangeRateViewController.swift */,
+				20F8B1F0274518A7008B1518 /* WeatherViewController.swift */,
 				20F8B1FA27451BE4008B1518 /* TraductorViewController.swift */,
 				20F8B1E327451678008B1518 /* WelcomeViewController.swift */,
 			);
@@ -291,7 +303,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F8B1E427451679008B1518 /* WelcomeViewController.swift in Sources */,
+				20F8B20D274BDDE2008B1518 /* WeatherService.swift in Sources */,
 				20F8B1F627451BC3008B1518 /* ChangeRateViewController.swift in Sources */,
+				20F8B208274BDDCA008B1518 /* TraductorService.swift in Sources */,
+				20F8B203274BDDA7008B1518 /* ChangeRateService.swift in Sources */,
+				20F8B212274BE595008B1518 /* ChangeRate.swift in Sources */,
 				20F8B1F1274518A7008B1518 /* WeatherViewController.swift in Sources */,
 				201D6BE52742B61800C11EB1 /* AppDelegate.swift in Sources */,
 				201D6BE72742B61800C11EB1 /* SceneDelegate.swift in Sources */,

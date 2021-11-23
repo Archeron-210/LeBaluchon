@@ -15,5 +15,4 @@ class WelcomeViewController: UIViewController {
         changeRateButton.layer.cornerRadius = 25.0
         traductorButton.layer.cornerRadius = 25.0
     }
-
 }
