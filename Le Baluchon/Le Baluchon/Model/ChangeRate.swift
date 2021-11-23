@@ -5,9 +5,9 @@ import Foundation
 
 struct ChangeRate: Codable {
     var date: String
-    var rate: Rate
+    var rates: Rate
 }
 
 struct Rate: Codable {
-    var rates: Double
+    var USD: Double
 }

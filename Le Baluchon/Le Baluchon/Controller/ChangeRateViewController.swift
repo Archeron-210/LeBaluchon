@@ -19,7 +19,13 @@ class ChangeRateViewController: UIViewController {
     }
     
     @IBAction func toggleConvertButton(_ sender: UIButton) {
+        obtainCurrentChangeRate()
         updateDollarsTextField()
+    }
+
+    private func updateDollarsTextField() {
+        dollarsTextField.text = ""
+        dollarsTextField.text = convertEurtoUSD()
     }
 
     private func convertEurtoUSD() -> String? {
@@ -34,23 +40,20 @@ class ChangeRateViewController: UIViewController {
             return nil
         }
 
-        let rate = changeRate.rate.rates
+        let rate = changeRate.rates.USD
         let result = eurosAmount * rate
         let resultToDisplay = String(result)
         
         return resultToDisplay
     }
 
-    private func updateDollarsTextField() {
-        dollarsTextField.text = ""
-        dollarsTextField.text = convertEurtoUSD()
-    }
-
     private func obtainCurrentChangeRate() {
         ChangeRateService.shared.getChangeRate { result in
             switch result {
             case .failure:
-                self.errorAlert()
+                DispatchQueue.main.async {
+                    self.errorAlert()
+                }
             case .success(let changeRate):
                 self.currentChangeRate = changeRate
             }
