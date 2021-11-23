@@ -19,11 +19,31 @@ class ChangeRateViewController: UIViewController {
     }
     
     @IBAction func toggleConvertButton(_ sender: UIButton) {
-
+        updateDollarsTextField()
     }
 
-    private func convert() {
+    private func convertEurtoUSD() -> String? {
+
+        guard let changeRate = currentChangeRate else {
+            return nil
+        }
+        guard let eurosTextFieldText = eurosTextField.text else {
+            return nil
+        }
+        guard let eurosAmount = Double(eurosTextFieldText) else {
+            return nil
+        }
+
+        let rate = changeRate.rate.rates
+        let result = eurosAmount * rate
+        let resultToDisplay = String(result)
         
+        return resultToDisplay
+    }
+
+    private func updateDollarsTextField() {
+        dollarsTextField.text = ""
+        dollarsTextField.text = convertEurtoUSD()
     }
 
     private func obtainCurrentChangeRate() {
@@ -37,7 +57,7 @@ class ChangeRateViewController: UIViewController {
         }
     }
 
-
+//MARK: - Alert
     private func errorAlert() {
         let alert = UIAlertController(title: "Erreur", message: "Il semble que le courant passe mal avec le serveur...", preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -45,6 +65,7 @@ class ChangeRateViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
+//MARK: - Aspect
     private func toggleActivityIndicator(shown: Bool) {
         convertButton.isHidden = shown
         activityIndicator.isHidden = !shown
