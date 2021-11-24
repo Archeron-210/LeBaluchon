@@ -3,13 +3,7 @@ import UIKit
 
 class ChangeRateViewController: UIViewController {
 
-    var currentChangeRate: ChangeRate? {
-        didSet {
-            DispatchQueue.main.async {
-                self.updateDollarsTextField()
-            }
-        }
-    }
+    var currentChangeRate: ChangeRate?
 
     var currentDate: String {
         getCurrentDate()
@@ -27,39 +21,61 @@ class ChangeRateViewController: UIViewController {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
         makeConvertButtonCornersRounded()
-        segmentedControlColorManagement()
+        setSegmentedControlAspect()
     }
 
 //MARK: - Functions
     @IBAction func toggleConvertButton(_ sender: UIButton) {
-        updateDollarsTextField()
+        switch currencySegmentedControl.selectedSegmentIndex {
+        case 0:
+            updateCurrencyTextField(dollarsTextField)
+        case 1:
+            updateCurrencyTextField(eurosTextField)
+        default:
+            break
+        }
     }
 
-    private func updateDollarsTextField() {
-        dollarsTextField.text = ""
-        dollarsTextField.text = convertEurtoUSD()
+    private func updateCurrencyTextField(_ currencyTextField: UITextField) {
+        currencyTextField.text = ""
+        currencyTextField.text = convert()
     }
 
-    private func convertEurtoUSD() -> String? {
+    private func convert() -> String? {
 
         guard let changeRate = currentChangeRate, changeRate.date == currentDate else {
             toggleActivityIndicator(shown: true)
             obtainCurrentChangeRate()
             return nil
         }
-        guard let eurosTextFieldText = eurosTextField.text else {
-            emptyTextFieldAlert()
-            return nil
-        }
-        guard let eurosAmount = Double(eurosTextFieldText) else {
-            return nil
-        }
-
         let rate = changeRate.rates.USD
-        let result = eurosAmount * rate
-        let resultToDisplay = String(result)
-        
-        return resultToDisplay
+
+        switch currencySegmentedControl.selectedSegmentIndex {
+        case 0:
+            guard let eurosTextFieldText = eurosTextField.text else {
+                emptyTextFieldAlert()
+                return nil
+            }
+            guard let eurosAmount = Double(eurosTextFieldText) else {
+                return nil
+            }
+            let result = eurosAmount * rate
+            let resultToDisplay = String(result)
+            return resultToDisplay
+        case 1:
+            guard let dollarsTextFieldText = dollarsTextField.text else {
+                emptyTextFieldAlert()
+                return nil
+            }
+            guard let dollarsAmount = Double(dollarsTextFieldText) else {
+                return nil
+            }
+            let result = dollarsAmount / rate
+            let resultToDisplay = String(result)
+            return resultToDisplay
+        default:
+            return nil
+        }
     }
 
     private func obtainCurrentChangeRate() {
@@ -112,7 +128,7 @@ class ChangeRateViewController: UIViewController {
         convertButton.layer.cornerRadius = 25.0
     }
 
-    private func segmentedControlColorManagement() {
+    private func setSegmentedControlAspect() {
         let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
         currencySegmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
     }
