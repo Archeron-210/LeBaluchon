@@ -37,12 +37,18 @@ class ChangeRateViewController: UIViewController {
     }
 
     private func updateCurrencyTextField(_ currencyTextField: UITextField) {
-        currencyTextField.text = ""
-        currencyTextField.text = convert()
+        switch currencyTextField {
+        case eurosTextField:
+            currencyTextField.text = convert(from: dollarsTextField)
+        case dollarsTextField:
+            currencyTextField.text = convert(from: eurosTextField)
+        default:
+            break
+        }
     }
 
-    private func convert() -> String? {
 
+    private func convert(from base: UITextField) -> String? {
         guard let changeRate = currentChangeRate, changeRate.date == currentDate else {
             toggleActivityIndicator(shown: true)
             obtainCurrentChangeRate()
@@ -50,27 +56,22 @@ class ChangeRateViewController: UIViewController {
         }
         let rate = changeRate.rates.USD
 
-        switch currencySegmentedControl.selectedSegmentIndex {
-        case 0:
-            guard let eurosTextFieldText = eurosTextField.text else {
-                emptyTextFieldAlert()
-                return nil
-            }
-            guard let eurosAmount = Double(eurosTextFieldText) else {
-                return nil
-            }
-            let result = eurosAmount * rate
+        guard let baseTextFieldText = base.text, !baseTextFieldText.isEmpty else {
+            emptyTextFieldAlert()
+            return nil
+        }
+        guard let baseAmount = Double(baseTextFieldText) else {
+            return nil
+        }
+
+        switch base {
+        case eurosTextField:
+            let result = baseAmount * rate
             let resultToDisplay = String(result)
             return resultToDisplay
-        case 1:
-            guard let dollarsTextFieldText = dollarsTextField.text else {
-                emptyTextFieldAlert()
-                return nil
-            }
-            guard let dollarsAmount = Double(dollarsTextFieldText) else {
-                return nil
-            }
-            let result = dollarsAmount / rate
+
+        case dollarsTextField:
+            let result = baseAmount / rate
             let resultToDisplay = String(result)
             return resultToDisplay
         default:
@@ -101,6 +102,7 @@ class ChangeRateViewController: UIViewController {
         let currentDate = format.string(from: date)
         return currentDate
     }
+
 
 //MARK: - Alerts
     private func errorAlert() {
