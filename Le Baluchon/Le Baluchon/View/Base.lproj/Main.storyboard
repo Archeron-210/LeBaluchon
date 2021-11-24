@@ -520,7 +520,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xjo-KV-yJG" userLabel="Eur/USD Stack View">
-                                <rect key="frame" x="20" y="203" width="374" height="310"/>
+                                <rect key="frame" x="20" y="203" width="374" height="375"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros €" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsi-KS-RRg">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -550,8 +550,16 @@
                                             <outlet property="delegate" destination="Ofq-YI-1qj" id="VXq-6f-zM8"/>
                                         </connections>
                                     </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Vv-Sl-SOd">
+                                        <rect key="frame" x="0.0" y="260" width="374" height="51"/>
+                                        <segments>
+                                            <segment title="€ -&gt; $"/>
+                                            <segment title="$ -&gt; €"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" red="0.054901960780000002" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssn-Jg-kZe">
-                                        <rect key="frame" x="0.0" y="260" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="325" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ueq-qr-ouN"/>
@@ -567,7 +575,7 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LWk-JM-WH2">
-                                <rect key="frame" x="188.66666666666666" y="469.66666666666669" width="37" height="37"/>
+                                <rect key="frame" x="188.66666666666666" y="534.66666666666663" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="48i-0m-DGP"/>
@@ -591,6 +599,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="LWk-JM-WH2" id="e4m-YH-fJx"/>
                         <outlet property="convertButton" destination="Ssn-Jg-kZe" id="vRC-R5-tNd"/>
+                        <outlet property="currencySegmentedControl" destination="3Vv-Sl-SOd" id="JPU-63-v6H"/>
                         <outlet property="dollarsTextField" destination="9K3-MV-Gq5" id="JLM-cR-CUU"/>
                         <outlet property="eurosTextField" destination="Rb3-cB-3ll" id="E0G-Py-QfW"/>
                     </connections>
@@ -607,7 +616,6 @@
         <!--Navigation Controller-->
         <scene sceneID="DBU-mB-tNH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JtP-Ow-OZ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="wpi-CA-u1y" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="weS-E3-QTK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -622,6 +630,7 @@
                         <segue destination="C6i-Kf-8Xh" kind="relationship" relationship="rootViewController" id="akM-ya-2gb"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JtP-Ow-OZ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2574" y="112"/>
         </scene>
