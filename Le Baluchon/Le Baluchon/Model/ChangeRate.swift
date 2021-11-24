@@ -11,3 +11,8 @@ struct ChangeRate: Codable {
 struct Rate: Codable {
     var USD: Double
 }
+
+enum Currency {
+    case euro
+    case dollar
+}

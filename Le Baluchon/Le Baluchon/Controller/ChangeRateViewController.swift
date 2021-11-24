@@ -3,20 +3,41 @@ import UIKit
 
 class ChangeRateViewController: UIViewController {
 
-    var currentChangeRate: ChangeRate?
+    var currentChangeRate: ChangeRate? {
+        didSet {
+            DispatchQueue.main.async {
+                self.computeConversion()
+            }
+        }
+    }
 
     var currentDate: String {
         getCurrentDate()
     }
 
-//MARK: - Outlets
+    var eurosCurrentValue: Double? {
+        guard let eurosText = eurosTextField.text else {
+            return nil
+        }
+        return Double(eurosText)
+    }
+
+    var dollarsCurrentValue: Double? {
+        guard let dollarsText = dollarsTextField.text else {
+            return nil
+        }
+        return Double(dollarsText)
+    }
+
+
+    // MARK: - Outlets
     @IBOutlet weak var eurosTextField: UITextField!
     @IBOutlet weak var dollarsTextField: UITextField!
     @IBOutlet weak var convertButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var currencySegmentedControl: UISegmentedControl!
 
-//MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
@@ -24,58 +45,60 @@ class ChangeRateViewController: UIViewController {
         setSegmentedControlAspect()
     }
 
-//MARK: - Functions
+    // MARK: - Functions
     @IBAction func toggleConvertButton(_ sender: UIButton) {
+        computeConversion()
+    }
+
+    private func computeConversion() {
         switch currencySegmentedControl.selectedSegmentIndex {
         case 0:
-            updateCurrencyTextField(dollarsTextField)
+            updateDollarTextfield()
         case 1:
-            updateCurrencyTextField(eurosTextField)
+            updateEuroTextField()
         default:
             break
         }
     }
 
-    private func updateCurrencyTextField(_ currencyTextField: UITextField) {
-        switch currencyTextField {
-        case eurosTextField:
-            currencyTextField.text = convert(from: dollarsTextField)
-        case dollarsTextField:
-            currencyTextField.text = convert(from: eurosTextField)
-        default:
-            break
+    // Convert from euro to dollar, so we take the euro value
+    // and update dollar textfield.
+    private func updateDollarTextfield() {
+        guard let value = eurosCurrentValue else {
+            emptyTextFieldAlert()
+            return
         }
+        dollarsTextField.text = convert(from: .euro, value: value)
     }
 
+    // Convert from dollar to euro, so we take the dollar value
+    // and update euro textfield.
+    private func updateEuroTextField() {
+        guard let value = dollarsCurrentValue else {
+            emptyTextFieldAlert()
+            return
+        }
+        eurosTextField.text = convert(from: .dollar, value: value)
+    }
 
-    private func convert(from base: UITextField) -> String? {
+    private func convert(from currency: Currency, value: Double) -> String? {
         guard let changeRate = currentChangeRate, changeRate.date == currentDate else {
             toggleActivityIndicator(shown: true)
             obtainCurrentChangeRate()
             return nil
         }
+
         let rate = changeRate.rates.USD
 
-        guard let baseTextFieldText = base.text, !baseTextFieldText.isEmpty else {
-            emptyTextFieldAlert()
-            return nil
-        }
-        guard let baseAmount = Double(baseTextFieldText) else {
-            return nil
-        }
-
-        switch base {
-        case eurosTextField:
-            let result = baseAmount * rate
+        switch currency {
+        case .euro:
+            let result = value * rate
             let resultToDisplay = String(result)
             return resultToDisplay
-
-        case dollarsTextField:
-            let result = baseAmount / rate
+        case .dollar:
+            let result = value / rate
             let resultToDisplay = String(result)
             return resultToDisplay
-        default:
-            return nil
         }
     }
 
@@ -104,7 +127,7 @@ class ChangeRateViewController: UIViewController {
     }
 
 
-//MARK: - Alerts
+    // MARK: - Alerts
     private func errorAlert() {
         let alert = UIAlertController(title: "Erreur", message: "Il semble que le courant passe mal avec le serveur 🔌", preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -119,11 +142,11 @@ class ChangeRateViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
-//MARK: - Aspect
+    // MARK: - Aspect
     private func toggleActivityIndicator(shown: Bool) {
-        convertButton.isHidden = shown
-        activityIndicator.isHidden = !shown
-        shown ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+        self.convertButton.isHidden = shown
+        self.activityIndicator.isHidden = !shown
+        shown ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
     }
 
     private func makeConvertButtonCornersRounded() {
@@ -136,7 +159,7 @@ class ChangeRateViewController: UIViewController {
     }
 }
 
-//MARK: - Keyboard Management
+// MARK: - Keyboard Management
 extension ChangeRateViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
