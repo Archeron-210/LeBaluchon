@@ -11,6 +11,10 @@ class ChangeRateViewController: UIViewController {
         }
     }
 
+    var currentDate: String {
+        getCurrentDate()
+    }
+
 //MARK: - Outlets
     @IBOutlet weak var eurosTextField: UITextField!
     @IBOutlet weak var dollarsTextField: UITextField!
@@ -27,6 +31,7 @@ class ChangeRateViewController: UIViewController {
 //MARK: - Functions
     @IBAction func toggleConvertButton(_ sender: UIButton) {
         updateDollarsTextField()
+        print(currentDate)
     }
 
     private func updateDollarsTextField() {
@@ -69,6 +74,14 @@ class ChangeRateViewController: UIViewController {
                 self.currentChangeRate = changeRate
             }
         }
+    }
+
+    private func getCurrentDate() -> String {
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd"
+        let currentDate = format.string(from: date)
+        return currentDate
     }
 
 //MARK: - Alert
