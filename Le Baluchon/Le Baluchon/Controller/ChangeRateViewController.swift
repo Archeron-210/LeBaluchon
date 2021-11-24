@@ -11,18 +11,20 @@ class ChangeRateViewController: UIViewController {
         }
     }
 
-
+//MARK: - Outlets
     @IBOutlet weak var eurosTextField: UITextField!
     @IBOutlet weak var dollarsTextField: UITextField!
     @IBOutlet weak var convertButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+//MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
-        convertButton.layer.cornerRadius = 25.0
+        makeConvertButtonCornersRounded()
     }
-    
+
+//MARK: - Functions
     @IBAction func toggleConvertButton(_ sender: UIButton) {
         updateDollarsTextField()
     }
@@ -84,9 +86,12 @@ class ChangeRateViewController: UIViewController {
         shown ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
 
+    private func makeConvertButtonCornersRounded() {
+        convertButton.layer.cornerRadius = 25.0
+    }
 }
 
-
+//MARK: - Keyboard Management
 extension ChangeRateViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
