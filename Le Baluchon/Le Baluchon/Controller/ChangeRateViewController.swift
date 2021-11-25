@@ -14,6 +14,7 @@ class ChangeRateViewController: UIViewController {
         }
     }
 
+    // obtaining current date from DateService :
     let currentDate = DateService.currentDate
 
     // make textFields texts Double? :
