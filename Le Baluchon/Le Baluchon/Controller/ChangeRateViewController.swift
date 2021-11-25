@@ -70,7 +70,7 @@ class ChangeRateViewController: UIViewController {
     // and update dollar textfield.
     private func updateDollarTextfield() {
         guard let value = eurosCurrentValue else {
-            emptyTextFieldAlert()
+            textFieldAlert()
             return
         }
         dollarsTextField.text = convert(from: .euro, value: value)
@@ -80,7 +80,7 @@ class ChangeRateViewController: UIViewController {
     // and update euro textfield.
     private func updateEuroTextField() {
         guard let value = dollarsCurrentValue else {
-            emptyTextFieldAlert()
+            textFieldAlert()
             return
         }
         eurosTextField.text = convert(from: .dollar, value: value)
@@ -141,8 +141,8 @@ class ChangeRateViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
-    private func emptyTextFieldAlert() {
-        let alert = UIAlertController(title: "Erreur", message: "Il faut d'abord entrer un montant pour le convertir 💵", preferredStyle: .alert)
+    private func textFieldAlert() {
+        let alert = UIAlertController(title: "Erreur", message: "Il faut d'abord entrer un montant dans le champ texte correspondant pour le convertir 💵", preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionAlert)
         present(alert, animated: true, completion: nil)
