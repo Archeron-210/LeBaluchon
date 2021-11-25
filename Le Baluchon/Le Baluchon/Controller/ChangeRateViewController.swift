@@ -120,6 +120,7 @@ class ChangeRateViewController: UIViewController {
                 }
             case .success(let changeRate):
                 self.currentChangeRate = changeRate
+                // save date and rate here
             }
         }
     }
