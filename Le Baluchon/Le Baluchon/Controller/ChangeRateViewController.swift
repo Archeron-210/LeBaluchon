@@ -3,7 +3,10 @@ import UIKit
 
 class ChangeRateViewController: UIViewController {
 
+    // MARK: - Properties
+
     var currentChangeRate: ChangeRate? {
+        // display the result directly when obtaining a change rate :
         didSet {
             DispatchQueue.main.async {
                 self.computeConversion()
@@ -15,13 +18,13 @@ class ChangeRateViewController: UIViewController {
         getCurrentDate()
     }
 
+    // make textFields texts Double? :
     var eurosCurrentValue: Double? {
         guard let eurosText = eurosTextField.text else {
             return nil
         }
         return Double(eurosText)
     }
-
     var dollarsCurrentValue: Double? {
         guard let dollarsText = dollarsTextField.text else {
             return nil
@@ -41,8 +44,11 @@ class ChangeRateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
-        makeConvertButtonCornersRounded()
+        setConvertButtonCorners()
         setSegmentedControlAspect()
+
+        //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+           //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     // MARK: - Functions
@@ -142,33 +148,41 @@ class ChangeRateViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
-    // MARK: - Aspect
+    // MARK: - UI Aspect
     private func toggleActivityIndicator(shown: Bool) {
-        self.convertButton.isHidden = shown
-        self.activityIndicator.isHidden = !shown
-        shown ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
+        convertButton.isHidden = shown
+        activityIndicator.isHidden = !shown
+        shown ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
 
-    private func makeConvertButtonCornersRounded() {
+    private func setConvertButtonCorners() {
         convertButton.layer.cornerRadius = 25.0
+    }
+
+    @IBAction func currencyDidChange(_ sender: UISegmentedControl) {
+        eurosTextField.text = ""
+        dollarsTextField.text = ""
     }
 
     private func setSegmentedControlAspect() {
         let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
         currencySegmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
     }
-}
 
-// MARK: - Keyboard Management
-extension ChangeRateViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
+    // MARK: - Keyboard Management
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         eurosTextField.resignFirstResponder()
         dollarsTextField.resignFirstResponder()
     }
+
+    //@objc func keyboardWillShow(notification: NSNotification) {
+       // if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+           // self.converterStackView.frame.origin.y -= keyboardSize.height
+        //}
+    //}
+
+    //@objc func keyboardWillHide(notification: NSNotification) {
+       // self.converterStackView.frame.origin.y = 0
+    //}
 
 }

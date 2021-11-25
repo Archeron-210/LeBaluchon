@@ -1,6 +1,12 @@
 
 import Foundation
 
+
+enum Currency {
+    case euro
+    case dollar
+}
+
 // Mapping the JSON data from API response using Codable Protocol to parse it later  :
 
 struct ChangeRate: Codable {
@@ -12,7 +18,4 @@ struct Rate: Codable {
     var USD: Double
 }
 
-enum Currency {
-    case euro
-    case dollar
-}
+
