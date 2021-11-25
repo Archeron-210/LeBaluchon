@@ -602,7 +602,6 @@
                     <connections>
                         <outlet property="activityIndicator" destination="LWk-JM-WH2" id="e4m-YH-fJx"/>
                         <outlet property="convertButton" destination="Ssn-Jg-kZe" id="vRC-R5-tNd"/>
-                        <outlet property="converterStackView" destination="xjo-KV-yJG" id="h3k-hi-T4F"/>
                         <outlet property="currencySegmentedControl" destination="3Vv-Sl-SOd" id="JPU-63-v6H"/>
                         <outlet property="dollarsTextField" destination="9K3-MV-Gq5" id="JLM-cR-CUU"/>
                         <outlet property="eurosTextField" destination="Rb3-cB-3ll" id="E0G-Py-QfW"/>

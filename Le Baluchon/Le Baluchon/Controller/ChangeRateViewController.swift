@@ -14,9 +14,7 @@ class ChangeRateViewController: UIViewController {
         }
     }
 
-    var currentDate: String {
-        getCurrentDate()
-    }
+    let currentDate = DateService.currentDate
 
     // make textFields texts Double? :
     var eurosCurrentValue: Double? {
@@ -46,6 +44,7 @@ class ChangeRateViewController: UIViewController {
         toggleActivityIndicator(shown: false)
         setConvertButtonCorners()
         setSegmentedControlAspect()
+        getCurrentDate()
 
         //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
            //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -124,12 +123,13 @@ class ChangeRateViewController: UIViewController {
         }
     }
 
-    private func getCurrentDate() -> String {
+    private func getCurrentDate() {
         let date = Date()
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd"
         let currentDate = format.string(from: date)
-        return currentDate
+
+        DateService.currentDate = currentDate
     }
 
 
