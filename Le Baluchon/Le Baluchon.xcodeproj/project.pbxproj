@@ -14,7 +14,6 @@
 		201D6BF12742B62300C11EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BEF2742B62300C11EB1 /* LaunchScreen.storyboard */; };
 		201D6BFC2742B62400C11EB1 /* Le_BaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D6BFB2742B62400C11EB1 /* Le_BaluchonTests.swift */; };
 		201D6C222742CBF300C11EB1 /* Nickainley-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = 201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */; };
-		20774ECD274FFBE00075528C /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20774ECC274FFBE00075528C /* DateService.swift */; };
 		20F8B1E427451679008B1518 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B1E327451678008B1518 /* WelcomeViewController.swift */; };
 		20F8B1F1274518A7008B1518 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B1F0274518A7008B1518 /* WeatherViewController.swift */; };
 		20F8B1F627451BC3008B1518 /* ChangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B1F527451BC3008B1518 /* ChangeRateViewController.swift */; };
@@ -55,7 +54,6 @@
 		201D6BFD2742B62400C11EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201D6C022742B62400C11EB1 /* Le BaluchonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le BaluchonUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nickainley-Normal.otf"; sourceTree = "<group>"; };
-		20774ECC274FFBE00075528C /* DateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateService.swift; path = "Le Baluchon/Controller/DateService.swift"; sourceTree = SOURCE_ROOT; };
 		20F8B1E327451678008B1518 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		20F8B1F0274518A7008B1518 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = "Le Baluchon/View/WeatherViewController.swift"; sourceTree = SOURCE_ROOT; };
 		20F8B1F527451BC3008B1518 /* ChangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 		201D6C1A2742B86900C11EB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				20774ECC274FFBE00075528C /* DateService.swift */,
 				20F8B202274BDDA7008B1518 /* ChangeRateService.swift */,
 				20F8B211274BE595008B1518 /* ChangeRate.swift */,
 				20F8B207274BDDCA008B1518 /* TraductorService.swift */,
@@ -309,7 +306,6 @@
 				20F8B20D274BDDE2008B1518 /* WeatherService.swift in Sources */,
 				20F8B1F627451BC3008B1518 /* ChangeRateViewController.swift in Sources */,
 				20F8B208274BDDCA008B1518 /* TraductorService.swift in Sources */,
-				20774ECD274FFBE00075528C /* DateService.swift in Sources */,
 				20F8B203274BDDA7008B1518 /* ChangeRateService.swift in Sources */,
 				20F8B212274BE595008B1518 /* ChangeRate.swift in Sources */,
 				20F8B1F1274518A7008B1518 /* WeatherViewController.swift in Sources */,
