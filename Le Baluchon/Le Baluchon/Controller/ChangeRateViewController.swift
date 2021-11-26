@@ -17,8 +17,6 @@ class ChangeRateViewController: UIViewController {
     let currentChangeRate = ChangeRateData.changeRate
     let currentChangeRateDate = ChangeRateData.changeRateDate
 
-    // obtaining current date from DateService :
-   // let currentDate = DateService.currentDate
     var currentDate: String {
         getCurrentDate()
     }
@@ -38,6 +36,8 @@ class ChangeRateViewController: UIViewController {
         return Double(dollarsText)
     }
 
+    private var originalStackViewBottomConstraint:CGFloat = 0.0
+
 
     // MARK: - Outlets
     @IBOutlet weak var eurosTextField: UITextField!
@@ -45,16 +45,17 @@ class ChangeRateViewController: UIViewController {
     @IBOutlet weak var convertButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var currencySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var stackViewBottomConstraint: NSLayoutConstraint!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        originalStackViewBottomConstraint = stackViewBottomConstraint.constant
         toggleActivityIndicator(shown: false)
         setConvertButtonCorners()
         setSegmentedControlAspect()
 
-        //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-           //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        listenKeyboardNotifications()
     }
 
     // MARK: - Functions
@@ -94,9 +95,13 @@ class ChangeRateViewController: UIViewController {
     }
 
     private func convert(from currency: Currency, value: Double) -> String? {
-        guard let rate = Double(currentChangeRate), currentChangeRateDate == currentDate else {
+        guard currentChangeRateDate == currentDate else {
             toggleActivityIndicator(shown: true)
             obtainCurrentChangeRate()
+            return nil
+        }
+
+        guard let rate = Double(currentChangeRate) else {
             return nil
         }
 
@@ -183,14 +188,27 @@ class ChangeRateViewController: UIViewController {
         dollarsTextField.resignFirstResponder()
     }
 
-    //@objc func keyboardWillShow(notification: NSNotification) {
-       // if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-           // self.converterStackView.frame.origin.y -= keyboardSize.height
-        //}
-    //}
+    private func listenKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 
-    //@objc func keyboardWillHide(notification: NSNotification) {
-       // self.converterStackView.frame.origin.y = 0
-    //}
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        stackViewBottomConstraint.constant = keyboardSize.height + 2
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        stackViewBottomConstraint.constant = originalStackViewBottomConstraint
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
+        }
+    }
 
 }

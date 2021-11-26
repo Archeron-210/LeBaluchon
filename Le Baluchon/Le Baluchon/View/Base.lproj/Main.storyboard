@@ -606,6 +606,7 @@
                         <outlet property="currencySegmentedControl" destination="3Vv-Sl-SOd" id="JPU-63-v6H"/>
                         <outlet property="dollarsTextField" destination="9K3-MV-Gq5" id="JLM-cR-CUU"/>
                         <outlet property="eurosTextField" destination="Rb3-cB-3ll" id="E0G-Py-QfW"/>
+                        <outlet property="stackViewBottomConstraint" destination="zXz-eE-jVR" id="rpq-5b-IG9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bm0-cY-QaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
