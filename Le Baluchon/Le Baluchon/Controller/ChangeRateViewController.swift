@@ -5,7 +5,7 @@ class ChangeRateViewController: UIViewController {
 
     // MARK: - Properties
 
-    var currentChangeRate: ChangeRate? {
+    var changeRate: ChangeRate? {
         // display the result directly when obtaining a change rate :
         didSet {
             DispatchQueue.main.async {
@@ -13,6 +13,9 @@ class ChangeRateViewController: UIViewController {
             }
         }
     }
+
+    let currentChangeRate = ChangeRateData.changeRate
+    let currentChangeRateDate = ChangeRateData.changeRateDate
 
     // obtaining current date from DateService :
    // let currentDate = DateService.currentDate
@@ -91,13 +94,11 @@ class ChangeRateViewController: UIViewController {
     }
 
     private func convert(from currency: Currency, value: Double) -> String? {
-        guard let changeRate = currentChangeRate, changeRate.date == currentDate else {
+        guard let rate = Double(currentChangeRate), currentChangeRateDate == currentDate else {
             toggleActivityIndicator(shown: true)
             obtainCurrentChangeRate()
             return nil
         }
-
-        let rate = changeRate.rates.USD
 
         switch currency {
         case .euro:
@@ -122,8 +123,10 @@ class ChangeRateViewController: UIViewController {
                     self.errorAlert()
                 }
             case .success(let changeRate):
-                self.currentChangeRate = changeRate
-                // save date and rate here
+                self.changeRate = changeRate
+                // save date and rate here in ChangeRateData :
+                ChangeRateData.changeRate = self.currentChangeRate
+                ChangeRateData.changeRateDate = self.currentChangeRateDate
             }
         }
     }
