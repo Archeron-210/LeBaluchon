@@ -5,31 +5,27 @@ class ChangeRateViewController: UIViewController {
 
     // MARK: - Properties
 
-    var changeRate: ChangeRate? {
-        // display the result directly when obtaining a change rate :
-        didSet {
-            DispatchQueue.main.async {
-                self.computeConversion()
-            }
-        }
+    private var currentChangeRate: Double {
+        ChangeRateData.changeRate
     }
 
-    let currentChangeRate = ChangeRateData.changeRate
-    let currentChangeRateDate = ChangeRateData.changeRateDate
+    private var currentChangeRateDate: String {
+        ChangeRateData.changeRateDate
+    }
 
-    var currentDate: String {
+    private var currentDate: String {
         getCurrentDate()
     }
 
 
     // make textFields texts Double? :
-    var eurosCurrentValue: Double? {
+    private var eurosCurrentValue: Double? {
         guard let eurosText = eurosTextField.text else {
             return nil
         }
         return Double(eurosText)
     }
-    var dollarsCurrentValue: Double? {
+    private var dollarsCurrentValue: Double? {
         guard let dollarsText = dollarsTextField.text else {
             return nil
         }
@@ -51,6 +47,7 @@ class ChangeRateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         originalStackViewBottomConstraint = stackViewBottomConstraint.constant
+
         toggleActivityIndicator(shown: false)
         setConvertButtonCorners()
         setSegmentedControlAspect()
@@ -74,8 +71,8 @@ class ChangeRateViewController: UIViewController {
         }
     }
 
-    // Convert from euro to dollar, so we take the euro value
-    // and update dollar textfield.
+    /* Convert from euro to dollar, so we take the euro value
+     and update dollar textfield. */
     private func updateDollarTextfield() {
         guard let value = eurosCurrentValue else {
             textFieldAlert()
@@ -84,8 +81,8 @@ class ChangeRateViewController: UIViewController {
         dollarsTextField.text = convert(from: .euro, value: value)
     }
 
-    // Convert from dollar to euro, so we take the dollar value
-    // and update euro textfield.
+    /* Convert from dollar to euro, so we take the dollar value
+     and update euro textfield. */
     private func updateEuroTextField() {
         guard let value = dollarsCurrentValue else {
             textFieldAlert()
@@ -101,17 +98,13 @@ class ChangeRateViewController: UIViewController {
             return nil
         }
 
-        guard let rate = Double(currentChangeRate) else {
-            return nil
-        }
-
         switch currency {
         case .euro:
-            let result = value * rate
+            let result = value * currentChangeRate
             let resultToDisplay = String(result)
             return resultToDisplay
         case .dollar:
-            let result = value / rate
+            let result = value / currentChangeRate
             let resultToDisplay = String(result)
             return resultToDisplay
         }
@@ -128,10 +121,12 @@ class ChangeRateViewController: UIViewController {
                     self.errorAlert()
                 }
             case .success(let changeRate):
-                self.changeRate = changeRate
-                // save date and rate here in ChangeRateData :
-                ChangeRateData.changeRate = self.currentChangeRate
-                ChangeRateData.changeRateDate = self.currentChangeRateDate
+                // save date and rate in ChangeRateData :
+                ChangeRateData.changeRate = changeRate.rates.USD
+                ChangeRateData.changeRateDate = changeRate.date
+                DispatchQueue.main.async {
+                    self.computeConversion()
+                }
             }
         }
     }

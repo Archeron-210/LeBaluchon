@@ -35,9 +35,9 @@ class ChangeRateData {
             UserDefaults.standard.set(newValue, forKey: Keys.currentChangeRateDate)
         }
     }
-    static var changeRate: String {
+    static var changeRate: Double {
         get {
-            return UserDefaults.standard.string(forKey: Keys.currentChangeRate) ?? ""
+            return UserDefaults.standard.double(forKey: Keys.currentChangeRate)
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Keys.currentChangeRate)
