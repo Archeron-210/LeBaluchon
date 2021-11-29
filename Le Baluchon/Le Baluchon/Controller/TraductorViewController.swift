@@ -4,23 +4,78 @@ import UIKit
 
 class TraductorViewController: UIViewController {
 
+    private var translatedText = ""
+
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var languageSegmentedControl: UISegmentedControl!
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-
-    @IBAction func toggleTranslationButton(_ sender: UIButton) {
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        activityIndicator.isHidden = true
-        translateButton.layer.cornerRadius = 25.0
+        toggleActivityIndicator(shown: false)
+        setTranslateButtonCorners()
+        setSegmentedControlAspect()
 
     }
 
+    @IBAction func toggleTranslationButton(_ sender: UIButton) {
+        translate()
+        updateTextView()
+    }
+    
+    private func translate() {
+        TraductorService.shared.getTranslation(textToTranslate: textView.text) { result in
+            switch result {
+            case .failure:
+                DispatchQueue.main.async {
+                    self.errorAlert()
+                }
+            case .success(let traductor):
+                self.translatedText = traductor.data.translations.translatedText
+            }
+        }
+    }
+
+    private func updateTextView() {
+        DispatchQueue.main.async {
+            self.textView.text = self.translatedText
+        }
+    }
+
+    // MARK: - Alerts
+    private func errorAlert() {
+        let alert = UIAlertController(title: "Erreur", message: "Il semble que le courant passe mal avec le serveur 🔌", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func textViewAlert() {
+        let alert = UIAlertController(title: "Erreur", message: "Il faut d'abord entrer une phrase dans le champ texte pour la traduire 📝", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
+
+    // MARK: - UI Aspect
+    private func toggleActivityIndicator(shown: Bool) {
+        translateButton.isHidden = shown
+        activityIndicator.isHidden = !shown
+        shown ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+    }
+
+    private func setTranslateButtonCorners() {
+        translateButton.layer.cornerRadius = 25.0
+    }
+
+    private func setSegmentedControlAspect() {
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
+        languageSegmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
+    }
+
+    // MARK: - Keyboard Management
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         textView.resignFirstResponder()
     }

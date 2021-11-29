@@ -27,8 +27,8 @@ class TraductorService {
         self.resourceUrl = URL(string: resourceString)
     }
 
-    func getTranslation(completion: @escaping(Result<TranslationDetails, TraductorError>)-> Void) {
-        guard let request = createTranslationRequest() else {
+    func getTranslation(textToTranslate: String?, completion: @escaping(Result<TranslationData, TraductorError>)-> Void) {
+        guard let request = createTranslationRequest(textToTranslate: textToTranslate) else {
             return
         }
         task = URLSession.shared.dataTask(with: request) {data, response, error in
@@ -46,8 +46,8 @@ class TraductorService {
             }
             do {
                 let decoder = JSONDecoder()
-                let changeRate = try decoder.decode(TranslationDetails.self, from: jsonData)
-                completion(.success(changeRate))
+                let traductor = try decoder.decode(TranslationData.self, from: jsonData)
+                completion(.success(traductor))
             } catch {
                 completion(.failure(.parsingFailed))
             }
@@ -55,13 +55,17 @@ class TraductorService {
         task?.resume()
     }
 
-    private func createTranslationRequest() -> URLRequest? {
+    // returns a URLRequest? with a functionnal body :
+    private func createTranslationRequest(textToTranslate: String?) -> URLRequest? {
         guard let url = resourceUrl else {
+            return nil
+        }
+        guard let text = textToTranslate else {
             return nil
         }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        let body = "q=helloworld&source=en&target=fr&format=text"
+        let body = "q=\(text)&source=en&target=fr&format=text"
         request.httpBody = body.data(using: .utf8)
         return request
     }
