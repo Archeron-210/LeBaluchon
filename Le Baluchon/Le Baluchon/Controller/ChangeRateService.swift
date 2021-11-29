@@ -25,11 +25,7 @@ class ChangeRateService {
     // MARK: - Init
     init() {
         let resourceString = "http://data.fixer.io/api/latest?access_key=\(apiKey)&symbols=USD&format=1"
-        guard let resourceUrl = URL(string: resourceString) else {
-            self.resourceUrl = nil
-            return
-        }
-        self.resourceUrl = resourceUrl
+        self.resourceUrl = URL(string: resourceString)
     }
 
     // MARK: - Get Change Rate
@@ -39,7 +35,7 @@ class ChangeRateService {
             completion(.failure(.urlError))
             return
         }
-        let dataTask = URLSession.shared.dataTask(with: url) {data, response, error in
+        task = URLSession.shared.dataTask(with: url) {data, response, error in
             guard error == nil else {
                 completion(.failure(.apiError))
                 return
@@ -60,7 +56,7 @@ class ChangeRateService {
                 completion(.failure(.parsingFailed))
             }
         }
-        dataTask.resume()
+        task?.resume()
     }
 
 }

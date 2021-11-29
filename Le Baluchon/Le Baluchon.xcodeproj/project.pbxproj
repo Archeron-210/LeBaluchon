@@ -133,8 +133,8 @@
 		201D6C1A2742B86900C11EB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				20F8B202274BDDA7008B1518 /* ChangeRateService.swift */,
 				20F8B211274BE595008B1518 /* ChangeRate.swift */,
+				20F8B202274BDDA7008B1518 /* ChangeRateService.swift */,
 				20774ED7275519B70075528C /* Traductor.swift */,
 				20F8B207274BDDCA008B1518 /* TraductorService.swift */,
 				20F8B20C274BDDE2008B1518 /* WeatherService.swift */,
