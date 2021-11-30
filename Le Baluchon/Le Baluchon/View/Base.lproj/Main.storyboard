@@ -429,11 +429,12 @@
                             <constraint firstItem="bhB-pi-gFF" firstAttribute="top" secondItem="BFG-Tu-BKI" secondAttribute="top" constant="10" id="2ix-UQ-lFh"/>
                             <constraint firstItem="bhB-pi-gFF" firstAttribute="top" secondItem="BFG-Tu-BKI" secondAttribute="top" constant="10" id="3NH-rT-uNo"/>
                             <constraint firstItem="iaA-aW-YUv" firstAttribute="centerX" secondItem="Muw-OH-stX" secondAttribute="centerX" id="4Ba-hl-yhQ"/>
+                            <constraint firstItem="BFG-Tu-BKI" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dze-Id-Nht" secondAttribute="bottom" constant="240" id="HQF-PC-e3B"/>
                             <constraint firstItem="BFG-Tu-BKI" firstAttribute="trailing" secondItem="dze-Id-Nht" secondAttribute="trailing" constant="20" id="PnS-Mm-J7R"/>
                             <constraint firstItem="iaA-aW-YUv" firstAttribute="centerX" secondItem="Muw-OH-stX" secondAttribute="centerX" id="T07-z7-TIO"/>
                             <constraint firstItem="BFG-Tu-BKI" firstAttribute="trailing" secondItem="bhB-pi-gFF" secondAttribute="trailing" constant="20" id="Ule-iy-Ojx"/>
                             <constraint firstItem="bhB-pi-gFF" firstAttribute="leading" secondItem="BFG-Tu-BKI" secondAttribute="leading" constant="20" id="YTd-U7-rar"/>
-                            <constraint firstItem="dze-Id-Nht" firstAttribute="top" secondItem="bhB-pi-gFF" secondAttribute="bottom" constant="40" id="aFf-gh-Dfk"/>
+                            <constraint firstItem="dze-Id-Nht" firstAttribute="top" secondItem="bhB-pi-gFF" secondAttribute="bottom" priority="750" constant="40" id="aFf-gh-Dfk"/>
                             <constraint firstItem="iaA-aW-YUv" firstAttribute="centerY" secondItem="Muw-OH-stX" secondAttribute="centerY" id="diY-2L-0GW"/>
                             <constraint firstItem="BFG-Tu-BKI" firstAttribute="trailing" secondItem="dze-Id-Nht" secondAttribute="trailing" constant="20" id="hEe-2b-rAq"/>
                             <constraint firstItem="bhB-pi-gFF" firstAttribute="leading" secondItem="BFG-Tu-BKI" secondAttribute="leading" constant="20" id="l20-6i-xzE"/>
@@ -481,6 +482,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="iaA-aW-YUv" id="Utk-GH-WC4"/>
                         <outlet property="languageSegmentedControl" destination="VKW-S6-u3R" id="fem-a6-tqF"/>
+                        <outlet property="stackViewBottomConstraint" destination="HQF-PC-e3B" id="o7j-zO-t6B"/>
                         <outlet property="textView" destination="Ret-hH-GKh" id="lgz-NU-Gg3"/>
                         <outlet property="translateButton" destination="Muw-OH-stX" id="uvx-Gp-1oV"/>
                     </connections>
@@ -503,16 +505,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lkr-fr-S7b" userLabel="Labels Stack View">
-                                <rect key="frame" x="20" y="98" width="374" height="104.5"/>
+                                <rect key="frame" x="20" y="98" width="374" height="109.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92g-0F-dny">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="63.5"/>
                                         <fontDescription key="fontDescription" name="Nickainley-Normal" family="Nickainley" pointSize="50"/>
                                         <color key="textColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taux de change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb8-0x-qS6">
-                                        <rect key="frame" x="0.0" y="73.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="78.5" width="374" height="31"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="27"/>
                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -520,7 +522,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xjo-KV-yJG" userLabel="Eur/USD Stack View">
-                                <rect key="frame" x="20" y="227.5" width="374" height="375"/>
+                                <rect key="frame" x="20" y="232.5" width="374" height="375"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros €" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsi-KS-RRg">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -578,7 +580,7 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LWk-JM-WH2">
-                                <rect key="frame" x="188.5" y="559" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="564" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="48i-0m-DGP"/>

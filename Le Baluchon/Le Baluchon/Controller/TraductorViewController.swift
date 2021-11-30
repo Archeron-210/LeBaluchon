@@ -9,18 +9,21 @@ class TraductorViewController: UIViewController {
     @IBOutlet weak var languageSegmentedControl: UISegmentedControl!
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var stackViewBottomConstraint: NSLayoutConstraint!
+    
+    // MARK: - Properties
 
-    // MARK: - Property
+    private var originalStackViewBottomConstraint: CGFloat = 0.0
     private var translatedText = ""
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        originalStackViewBottomConstraint = stackViewBottomConstraint.constant
         toggleActivityIndicator(shown: false)
         setTranslateButtonCorners()
         setSegmentedControlAspect()
-
+        listenKeyboardNotifications()
     }
 
     // MARK: - Functions
@@ -108,6 +111,30 @@ extension TraductorViewController: UITextViewDelegate {
     // MARK: - Keyboard Management
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         textView.resignFirstResponder()
+    }
+
+    private func listenKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    // to make the stackView go up a bit when the keyboard appears :
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        stackViewBottomConstraint.constant = keyboardSize.height + 2
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    // to make the stackView go back to its original position when the keyboard disappears :
+    @objc func keyboardWillHide(notification: NSNotification) {
+        stackViewBottomConstraint.constant = originalStackViewBottomConstraint
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
+        }
     }
 
 }

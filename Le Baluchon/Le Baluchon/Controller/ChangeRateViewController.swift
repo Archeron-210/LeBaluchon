@@ -185,6 +185,7 @@ class ChangeRateViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
+    // to make the stackView go up a bit when the keyboard appears :
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
@@ -194,7 +195,7 @@ class ChangeRateViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-
+    // to make the stackView go back to its original position when the keyboard disappears :
     @objc func keyboardWillHide(notification: NSNotification) {
         stackViewBottomConstraint.constant = originalStackViewBottomConstraint
         UIView.animate(withDuration: 1.0) {
