@@ -10,7 +10,7 @@ class TraductorViewController: UIViewController {
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    // MARK: - Properties
+    // MARK: - Property
     private var translatedText = ""
 
     // MARK: - Lifecycle
@@ -25,6 +25,10 @@ class TraductorViewController: UIViewController {
 
     // MARK: - Functions
     @IBAction func toggleTranslationButton(_ sender: UIButton) {
+        guard !textView.text.isEmpty else {
+            textViewAlert()
+            return
+        }
         translate()
     }
     
