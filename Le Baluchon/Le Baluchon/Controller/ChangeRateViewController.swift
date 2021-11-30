@@ -114,17 +114,13 @@ class ChangeRateViewController: UIViewController {
         ChangeRateService.shared.getChangeRate { result in
             DispatchQueue.main.async {
                 self.toggleActivityIndicator(shown: false)
-            }
-            switch result {
-            case .failure:
-                DispatchQueue.main.async {
+                switch result {
+                case .failure:
                     self.errorAlert()
-                }
-            case .success(let changeRate):
-                // save date and rate in ChangeRateData :
-                ChangeRateData.changeRate = changeRate.rates.USD
-                ChangeRateData.changeRateDate = changeRate.date
-                DispatchQueue.main.async {
+                case .success(let changeRate):
+                    // save date and rate in ChangeRateData :
+                    ChangeRateData.changeRate = changeRate.rates.USD
+                    ChangeRateData.changeRateDate = changeRate.date
                     self.computeConversion()
                 }
             }

@@ -4,13 +4,16 @@ import UIKit
 
 class TraductorViewController: UIViewController {
 
+    // MARK: - Properties
     private var translatedText = ""
 
+    // MARK: - Outlets
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var languageSegmentedControl: UISegmentedControl!
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,20 +23,24 @@ class TraductorViewController: UIViewController {
 
     }
 
+    // MARK: - Functions
     @IBAction func toggleTranslationButton(_ sender: UIButton) {
         translate()
-        updateTextView()
     }
     
     private func translate() {
         TraductorService.shared.getTranslation(textToTranslate: textView.text) { result in
+            DispatchQueue.main.async {
+                self.toggleActivityIndicator(shown: false)
+            }
             switch result {
             case .failure:
                 DispatchQueue.main.async {
                     self.errorAlert()
                 }
             case .success(let traductor):
-                self.translatedText = traductor.data.translations.translatedText
+                self.translatedText = traductor.data.translations.first?.translatedText ?? ""
+                self.updateTextView()
             }
         }
     }

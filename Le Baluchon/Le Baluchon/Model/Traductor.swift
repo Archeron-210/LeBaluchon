@@ -12,7 +12,7 @@ struct TranslationData: Codable {
 }
 
 struct TranslationDetails: Codable {
-    var translations: TranslatedText
+    var translations: [TranslatedText]
 }
 
 struct TranslatedText: Codable {

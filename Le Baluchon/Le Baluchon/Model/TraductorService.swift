@@ -27,6 +27,7 @@ class TraductorService {
         self.resourceUrl = URL(string: resourceString)
     }
 
+    // MARK: - Functions
     func getTranslation(textToTranslate: String?, completion: @escaping(Result<TranslationData, TraductorError>)-> Void) {
         guard let request = createTranslationRequest(textToTranslate: textToTranslate) else {
             return
