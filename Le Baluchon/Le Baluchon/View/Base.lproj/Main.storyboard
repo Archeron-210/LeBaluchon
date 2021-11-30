@@ -350,8 +350,8 @@
                                             <constraint firstAttribute="height" constant="40" id="DgY-rE-Lvg"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="Français"/>
-                                            <segment title="Anglais"/>
+                                            <segment title="Anglais 🇺🇸"/>
+                                            <segment title="Français 🇫🇷"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.055291511119999998" green="0.59549033640000004" blue="0.61961740259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <variation key="default">

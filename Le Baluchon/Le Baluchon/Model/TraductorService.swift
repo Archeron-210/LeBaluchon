@@ -28,8 +28,8 @@ class TraductorService {
     }
 
     // MARK: - Functions
-    func getTranslation(textToTranslate: String?, completion: @escaping(Result<TranslationData, TraductorError>)-> Void) {
-        guard let request = createTranslationRequest(textToTranslate: textToTranslate) else {
+    func getTranslation(textToTranslate: String?, from language: Language, completion: @escaping(Result<TranslationData, TraductorError>)-> Void) {
+        guard let request = createTranslationRequest(textToTranslate: textToTranslate, from: language) else {
             return
         }
         task = URLSession.shared.dataTask(with: request) {data, response, error in
@@ -57,7 +57,7 @@ class TraductorService {
     }
 
     // returns a URLRequest? with a functionnal body :
-    private func createTranslationRequest(textToTranslate: String?) -> URLRequest? {
+    private func createTranslationRequest(textToTranslate: String?, from language: Language) -> URLRequest? {
         guard let url = resourceUrl else {
             return nil
         }
@@ -66,7 +66,13 @@ class TraductorService {
         }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        let body = "q=\(text)&source=en&target=fr&format=text"
+        var body = ""
+        switch language {
+        case .english:
+            body = "q=\(text)&source=en&target=fr&format=text"
+        case .french:
+            body = "q=\(text)&source=fr&target=en&format=text"
+        }
         request.httpBody = body.data(using: .utf8)
         return request
     }
