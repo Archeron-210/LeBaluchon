@@ -232,6 +232,7 @@
                                         </state>
                                         <connections>
                                             <action selector="toggleConvertButton:" destination="Ofq-YI-1qj" eventType="touchUpInside" id="NuQ-SW-4f3"/>
+                                            <action selector="toggleRefreshButton:" destination="vey-aV-VdI" eventType="touchUpInside" id="ZHP-1H-ghw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -257,6 +258,13 @@
                     <navigationItem key="navigationItem" id="SUv-mX-hkF"/>
                     <connections>
                         <outlet property="activityIndicator" destination="kr4-dd-4Xz" id="Aww-oq-iJA"/>
+                        <outlet property="homeConditionLabel" destination="w5r-YA-LhF" id="56Z-0e-om5"/>
+                        <outlet property="homeTemperatureLabel" destination="Cse-7l-bC2" id="Awn-ma-r9N"/>
+                        <outlet property="homeWeatherIcon" destination="XZI-2h-0Qf" id="qms-cp-Zjz"/>
+                        <outlet property="nycConditionLabel" destination="rgc-7e-FOO" id="9yB-8K-f6Z"/>
+                        <outlet property="nycTemperatureLabel" destination="WT7-j9-lxH" id="4XK-M1-YAa"/>
+                        <outlet property="nycWeatherIcon" destination="7tp-1i-a8q" id="hz0-M1-bxa"/>
+                        <outlet property="refreshButton" destination="axg-QE-sBc" id="GNw-vN-oIW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5f-23-T4n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
