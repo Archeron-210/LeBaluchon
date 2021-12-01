@@ -3,8 +3,8 @@
 import Foundation
 
 struct Weather: Codable {
-    var weatherDetails: [WeatherDetails]
-    var temperature: Temperature
+    var weather: [WeatherDetails]
+    var main: Temperature
 }
 
 struct WeatherDetails: Codable {

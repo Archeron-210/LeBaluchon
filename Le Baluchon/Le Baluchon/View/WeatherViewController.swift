@@ -13,75 +13,60 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    // MARK: - Properties
-    private var nycTemperature = "°C"
-    private var nycWeatherDescription = ""
-    private var homeTemperature = "°C"
-    private var homeWeatherDescription = ""
-
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
         setRefreshButtonCorners()
+        refreshWeather()
     }
 
     // MARK: - Functions
     @IBAction func toggleRefreshButton(_ sender: UIButton) {
-        obtainCurrentNycWeather()
-        obtainCurrentHomeWeather()
+        refreshWeather()
     }
 
-    private func obtainCurrentNycWeather() {
-        WeatherService.shared.getNycWeather { result in
+    private func refreshWeather() {
+        obtainCurrentWeather(for: .home)
+        obtainCurrentWeather(for: .nyc)
+    }
+
+    private func obtainCurrentWeather(for cityCode: WeatherService.CityCode) {
+        WeatherService.shared.getWeather(for: cityCode) { result in
             DispatchQueue.main.async {
                 self.toggleActivityIndicator(shown: false)
                 switch result {
                 case .failure:
                     self.errorAlert()
-                case .success(let nycWeatherForecast):
-                    self.nycTemperature = String(nycWeatherForecast.temperature.temp)
-                    self.nycWeatherDescription = nycWeatherForecast.weatherDetails.description
-                    self.updateNycLabels()
-                    self.updateNycWeatherIcon()
+                case .success(let weatherForecast):
+                    let temperature = String(weatherForecast.main.temp)
+                    let description = weatherForecast.weather.first?.description ?? ""
+                    self.updateLabels(for: cityCode, temperature: temperature, description: description)
+                    self.updateWeatherIcon(for: cityCode)
                 }
             }
         }
     }
 
-    private func obtainCurrentHomeWeather() {
-        WeatherService.shared.getHomeWeather { result in
-            DispatchQueue.main.async {
-                self.toggleActivityIndicator(shown: false)
-                switch result {
-                case .failure:
-                    self.errorAlert()
-                case .success(let homeWeatherForecast):
-                    self.homeTemperature = String(homeWeatherForecast.temperature.temp)
-                    self.homeWeatherDescription = homeWeatherForecast.weatherDetails.description
-                    self.updateHomeLabels()
-                    self.updateHomeWeatherIcon()
-                }
-            }
+    private func updateLabels(for cityCode: WeatherService.CityCode, temperature: String, description: String) {
+        let celsiusTemperature = "\(temperature)°C"
+        switch cityCode {
+        case .home:
+            homeTemperatureLabel.text = celsiusTemperature
+            homeConditionLabel.text = description
+        case .nyc:
+            nycTemperatureLabel.text = celsiusTemperature
+            nycConditionLabel.text = description
         }
     }
 
-    private func updateNycLabels() {
-        nycTemperatureLabel.text = "\(nycTemperature)°C"
-        nycConditionLabel.text = "\(nycWeatherDescription)"
-    }
-
-    private func updateHomeLabels() {
-        homeTemperatureLabel.text = "\(homeTemperature)°C"
-        homeConditionLabel.text = "\(homeWeatherDescription)"
-    }
-
-    private func updateNycWeatherIcon() {
-        print("nycIcon")
-    }
-
-    private func updateHomeWeatherIcon() {
-        print("homeIcon")
+    private func updateWeatherIcon(for cityCode: WeatherService.CityCode) {
+        switch cityCode {
+        case .home:
+            print("homeIcon")
+        case .nyc:
+            print("nycIcon")
+        }
     }
 
     // MARK: - Alert

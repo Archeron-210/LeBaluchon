@@ -3,6 +3,11 @@ import Foundation
 
 class WeatherService {
 
+    enum CityCode: String {
+        case nyc = "5128581"
+        case home = "6454726"
+    }
+
     // MARK: - Error management
     enum WeatherError: Error {
         case noDataAvailable
@@ -18,23 +23,13 @@ class WeatherService {
     private(set) var nycSession = URLSession(configuration: .default)
     private(set) var homeSession = URLSession(configuration: .default)
 
-    private var nycResourceUrl: URL?
-    private var homeResourceUrl: URL?
-    private let nycCode = "5128581"
-    private let homeCode = "6454726"
     private let apiKey = "API_KEY"
+    private let baseUrl: String = "https://api.openweathermap.org/data/2.5/weather"
 
-    // MARK: - Init
-    init() {
-        let nycResourceString = "https://api.openweathermap.org/data/2.5/weather?id=\(nycCode)&appid=\(apiKey)&units=metric&lang=fr"
-        self.nycResourceUrl = URL(string: nycResourceString)
-        let homeResourceString = "https://api.openweathermap.org/data/2.5/weather?id=\(homeCode)&appid=\(apiKey)&units=metric&lang=fr"
-        self.homeResourceUrl = URL(string: homeResourceString)
-    }
 
     // MARK: - Get Weather Forecast
-    func getNycWeather(completion: @escaping (Result<Weather, WeatherError>)-> Void) {
-        guard let url = nycResourceUrl else {
+    func getWeather(for cityCode: CityCode, completion: @escaping (Result<Weather, WeatherError>)-> Void) {
+        guard let url = resourceUrl(for: cityCode) else {
             completion(.failure(.urlError))
             return
         }
@@ -53,8 +48,8 @@ class WeatherService {
             }
             do {
                 let decoder = JSONDecoder()
-                let nycWeatherForecast = try decoder.decode(Weather.self, from: jsonData)
-                completion(.success(nycWeatherForecast))
+                let weatherForecast = try decoder.decode(Weather.self, from: jsonData)
+                completion(.success(weatherForecast))
             } catch {
                 completion(.failure(.parsingFailed))
             }
@@ -62,34 +57,8 @@ class WeatherService {
         task?.resume()
     }
 
-    func getHomeWeather(completion: @escaping (Result<Weather, WeatherError>)-> Void) {
-        guard let url = homeResourceUrl else {
-            completion(.failure(.urlError))
-            return
-        }
-        task = URLSession.shared.dataTask(with: url) {data, response, error in
-            guard error == nil else {
-                completion(.failure(.apiError))
-                return
-            }
-            guard let jsonData = data else {
-                completion(.failure(.noDataAvailable))
-                return
-            }
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completion(.failure(.httpResponseError))
-                return
-            }
-            do {
-                let decoder = JSONDecoder()
-                let homeWeatherForecast = try decoder.decode(Weather.self, from: jsonData)
-                completion(.success(homeWeatherForecast))
-            } catch {
-                completion(.failure(.parsingFailed))
-            }
-        }
-        task?.resume()
+    private func resourceUrl(for cityCode: CityCode) -> URL? {
+        let rawUrl = "\(baseUrl)?id=\(cityCode.rawValue)&appid=\(apiKey)&units=metric&lang=fr"
+        return URL(string: rawUrl)
     }
-
-
 }
