@@ -13,6 +13,12 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    // MARK: - Properties
+    private var nycTemperature = "°C"
+    private var nycWeatherDescription = ""
+    private var homeTemperature = "°C"
+    private var homeWeatherDescription = ""
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +26,71 @@ class WeatherViewController: UIViewController {
         setRefreshButtonCorners()
     }
 
-
+    // MARK: - Functions
     @IBAction func toggleRefreshButton(_ sender: UIButton) {
+        obtainCurrentNycWeather()
+        obtainCurrentHomeWeather()
     }
 
+    private func obtainCurrentNycWeather() {
+        WeatherService.shared.getNycWeather { result in
+            DispatchQueue.main.async {
+                self.toggleActivityIndicator(shown: false)
+                switch result {
+                case .failure:
+                    self.errorAlert()
+                case .success(let nycWeatherForecast):
+                    self.nycTemperature = String(nycWeatherForecast.temperature.temp)
+                    self.nycWeatherDescription = nycWeatherForecast.weatherDetails.description
+                    self.updateNycLabels()
+                    self.updateNycWeatherIcon()
+                }
+            }
+        }
+    }
+
+    private func obtainCurrentHomeWeather() {
+        WeatherService.shared.getHomeWeather { result in
+            DispatchQueue.main.async {
+                self.toggleActivityIndicator(shown: false)
+                switch result {
+                case .failure:
+                    self.errorAlert()
+                case .success(let homeWeatherForecast):
+                    self.homeTemperature = String(homeWeatherForecast.temperature.temp)
+                    self.homeWeatherDescription = homeWeatherForecast.weatherDetails.description
+                    self.updateHomeLabels()
+                    self.updateHomeWeatherIcon()
+                }
+            }
+        }
+    }
+
+    private func updateNycLabels() {
+        nycTemperatureLabel.text = "\(nycTemperature)°C"
+        nycConditionLabel.text = "\(nycWeatherDescription)"
+    }
+
+    private func updateHomeLabels() {
+        homeTemperatureLabel.text = "\(homeTemperature)°C"
+        homeConditionLabel.text = "\(homeWeatherDescription)"
+    }
+
+    private func updateNycWeatherIcon() {
+        print("nycIcon")
+    }
+
+    private func updateHomeWeatherIcon() {
+        print("homeIcon")
+    }
+
+    // MARK: - Alert
+    private func errorAlert() {
+        let alert = UIAlertController(title: "Erreur", message: "Il semble que le courant passe mal avec le serveur 🔌", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
 
 
     // MARK: - UI Aspect

@@ -10,7 +10,10 @@ class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setButtonsAspect()
+    }
 
+    private func setButtonsAspect() {
         weatherButton.layer.cornerRadius = 25.0
         changeRateButton.layer.cornerRadius = 25.0
         traductorButton.layer.cornerRadius = 25.0
