@@ -53,10 +53,10 @@ class WeatherViewController: UIViewController {
         switch cityCode {
         case .home:
             homeTemperatureLabel.text = celsiusTemperature
-            homeConditionLabel.text = description
+            homeConditionLabel.text = description.capitalizingFirstLetter()
         case .nyc:
             nycTemperatureLabel.text = celsiusTemperature
-            nycConditionLabel.text = description
+            nycConditionLabel.text = description.capitalizingFirstLetter()
         }
     }
 
@@ -87,5 +87,15 @@ class WeatherViewController: UIViewController {
 
     private func setRefreshButtonCorners() {
         refreshButton.layer.cornerRadius = 25.0
+    }
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
     }
 }
