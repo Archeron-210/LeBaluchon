@@ -31,7 +31,7 @@ class WeatherViewController: UIViewController {
         obtainCurrentWeather(for: .nyc)
     }
 
-    private func obtainCurrentWeather(for cityCode: WeatherService.CityCode) {
+    private func obtainCurrentWeather(for cityCode: CityCode) {
         WeatherService.shared.getWeather(for: cityCode) { result in
             DispatchQueue.main.async {
                 self.toggleActivityIndicator(shown: false)
@@ -51,7 +51,7 @@ class WeatherViewController: UIViewController {
         }
     }
 
-    private func updateLabels(for cityCode: WeatherService.CityCode, temperature: String, description: String) {
+    private func updateLabels(for cityCode: CityCode, temperature: String, description: String) {
         let celsiusTemperature = "\(temperature)°C"
         switch cityCode {
         case .home:
@@ -63,40 +63,36 @@ class WeatherViewController: UIViewController {
         }
     }
 
-    private func updateWeatherIcon(for cityCode: WeatherService.CityCode, for id: Int) {
+    private func updateWeatherIcon(for cityCode: CityCode, for id: Int) {
         switch cityCode {
         case .home:
-            setWeatherIcon(imageView: homeWeatherIcon, for: id)
+            homeWeatherIcon.image = getWeatherIcon(for: id)
         case .nyc:
-            setWeatherIcon(imageView: nycWeatherIcon, for: id)
+            nycWeatherIcon.image = getWeatherIcon(for: id)
         }
     }
 
-    private func setWeatherIcon(imageView: UIImageView, for weatherID: Int) {
+    private func getWeatherIcon(for weatherID: Int) -> UIImage? {
         let value = weatherID
-        if 200...232 ~= value {
-            imageView.image = UIImage(systemName: "cloud.bolt")
-        }
-        if 300...321 ~= value {
-            imageView.image = UIImage(systemName: "cloud.drizzle")
-        }
-        if 500...531 ~= value {
-            imageView.image = UIImage(systemName: "cloud.rain")
-        }
-        if 600...622 ~= value {
-            imageView.image = UIImage(systemName: "snow")
-        }
-        if 701...781 ~= value {
-            imageView.image = UIImage(systemName: "cloud.fog")
-        }
-        if value == 800 {
-            imageView.image = UIImage(systemName: "sun.max")
-        }
-        if value == 801 {
-            imageView.image = UIImage(systemName: "cloud.sun")
-        }
-        if 802...804 ~= value {
-            imageView.image = UIImage(systemName: "smoke")
+        switch value {
+        case 200...232:
+            return UIImage(systemName: "cloud.bolt")
+        case 300...321:
+            return UIImage(systemName: "cloud.drizzle")
+        case 500...531:
+            return UIImage(systemName: "cloud.rain")
+        case 600...622:
+            return UIImage(systemName: "snow")
+        case 701...781:
+            return UIImage(systemName: "cloud.fog")
+        case 800:
+            return UIImage(systemName: "sun.max")
+        case 801:
+            return UIImage(systemName: "cloud.sun")
+        case 802...804:
+            return UIImage(systemName: "smoke")
+        default:
+            return UIImage(systemName: "cloud.sun")
         }
     }
 
@@ -123,12 +119,3 @@ class WeatherViewController: UIViewController {
     }
 }
 
-extension String {
-    func capitalizingFirstLetter() -> String {
-        return prefix(1).capitalized + dropFirst()
-    }
-
-    mutating func capitalizeFirstLetter() {
-        self = self.capitalizingFirstLetter()
-    }
-}

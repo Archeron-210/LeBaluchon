@@ -3,11 +3,6 @@ import Foundation
 
 class WeatherService {
 
-    enum CityCode: String {
-        case nyc = "5128581"
-        case home = "6454726"
-    }
-
     // MARK: - Error management
     enum WeatherError: Error {
         case noDataAvailable
