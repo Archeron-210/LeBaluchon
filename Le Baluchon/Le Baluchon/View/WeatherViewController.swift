@@ -41,8 +41,11 @@ class WeatherViewController: UIViewController {
                 case .success(let weatherForecast):
                     let temperature = String(weatherForecast.main.temp)
                     let description = weatherForecast.weather.first?.description ?? ""
+                    guard let weatherId = weatherForecast.weather.first?.id else {
+                        return
+                    }
                     self.updateLabels(for: cityCode, temperature: temperature, description: description)
-                    self.updateWeatherIcon(for: cityCode)
+                    self.updateWeatherIcon(for: cityCode, for: weatherId)
                 }
             }
         }
@@ -60,14 +63,43 @@ class WeatherViewController: UIViewController {
         }
     }
 
-    private func updateWeatherIcon(for cityCode: WeatherService.CityCode) {
+    private func updateWeatherIcon(for cityCode: WeatherService.CityCode, for id: Int) {
         switch cityCode {
         case .home:
-            print("homeIcon")
+            setWeatherIcon(imageView: homeWeatherIcon, for: id)
         case .nyc:
-            print("nycIcon")
+            setWeatherIcon(imageView: nycWeatherIcon, for: id)
         }
     }
+
+    private func setWeatherIcon(imageView: UIImageView, for weatherID: Int) {
+        if weatherID >= 200 && weatherID <= 232 {
+            imageView.image = UIImage(systemName: "cloud.bolt")
+        }
+        if weatherID >= 300 && weatherID <= 321 {
+            imageView.image = UIImage(systemName: "cloud.drizzle")
+        }
+        if weatherID >= 500 && weatherID <= 531 {
+            imageView.image = UIImage(systemName: "cloud.rain")
+        }
+        if weatherID >= 600 && weatherID <= 622 {
+            imageView.image = UIImage(systemName: "snow")
+        }
+        if weatherID >= 701 && weatherID <= 781 {
+            imageView.image = UIImage(systemName: "cloud.fog")
+        }
+        if weatherID == 800 {
+            imageView.image = UIImage(systemName: "sun.max")
+        }
+        if weatherID == 801 {
+            imageView.image = UIImage(systemName: "cloud.sun")
+        }
+        if weatherID >= 802 && weatherID <= 804 {
+            imageView.image = UIImage(systemName: "smoke")
+        }
+    }
+
+
 
     // MARK: - Alert
     private func errorAlert() {
