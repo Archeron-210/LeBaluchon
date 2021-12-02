@@ -162,7 +162,7 @@
                                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Nuageux" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgc-7e-FOO">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Nuageux" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgc-7e-FOO">
                                                         <rect key="frame" x="0.0" y="69.666666666666686" width="137" height="67.333333333333314"/>
                                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="23"/>
                                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -200,7 +200,7 @@
                                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Nuageux" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-YA-LhF">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Nuageux" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-YA-LhF">
                                                         <rect key="frame" x="0.0" y="69.666666666666629" width="137" height="67.333333333333314"/>
                                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="23"/>
                                                         <color key="textColor" red="0.053827665750000003" green="0.29431611299999999" blue="0.278432548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
