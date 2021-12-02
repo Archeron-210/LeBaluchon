@@ -73,28 +73,29 @@ class WeatherViewController: UIViewController {
     }
 
     private func setWeatherIcon(imageView: UIImageView, for weatherID: Int) {
-        if weatherID >= 200 && weatherID <= 232 {
+        let value = weatherID
+        if 200...232 ~= value {
             imageView.image = UIImage(systemName: "cloud.bolt")
         }
-        if weatherID >= 300 && weatherID <= 321 {
+        if 300...321 ~= value {
             imageView.image = UIImage(systemName: "cloud.drizzle")
         }
-        if weatherID >= 500 && weatherID <= 531 {
+        if 500...531 ~= value {
             imageView.image = UIImage(systemName: "cloud.rain")
         }
-        if weatherID >= 600 && weatherID <= 622 {
+        if 600...622 ~= value {
             imageView.image = UIImage(systemName: "snow")
         }
-        if weatherID >= 701 && weatherID <= 781 {
+        if 701...781 ~= value {
             imageView.image = UIImage(systemName: "cloud.fog")
         }
-        if weatherID == 800 {
+        if value == 800 {
             imageView.image = UIImage(systemName: "sun.max")
         }
-        if weatherID == 801 {
+        if value == 801 {
             imageView.image = UIImage(systemName: "cloud.sun")
         }
-        if weatherID >= 802 && weatherID <= 804 {
+        if 802...804 ~= value {
             imageView.image = UIImage(systemName: "smoke")
         }
     }
