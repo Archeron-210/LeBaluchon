@@ -7,6 +7,7 @@ enum CityCode: String {
     case home = "6454726"
 }
 
+// Mapping JSON data from API response using Codable Protocol to parse it later  :
 struct Weather: Codable {
     var weather: [WeatherDetails]
     var main: Temperature

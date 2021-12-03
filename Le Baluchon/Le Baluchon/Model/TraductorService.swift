@@ -32,7 +32,7 @@ class TraductorService {
         guard let request = createTranslationRequest(textToTranslate: textToTranslate, from: language) else {
             return
         }
-        task = URLSession.shared.dataTask(with: request) {data, response, error in
+        task = session.dataTask(with: request) {data, response, error in
             guard error == nil else {
                 completion(.failure(.apiError))
                 return

@@ -15,8 +15,7 @@ class WeatherService {
     private(set) static var shared = WeatherService()
 
     private var task: URLSessionDataTask?
-    private(set) var nycSession = URLSession(configuration: .default)
-    private(set) var homeSession = URLSession(configuration: .default)
+    private(set) var session = URLSession(configuration: .default)
 
     private let apiKey = "API_KEY"
     private let baseUrl: String = "https://api.openweathermap.org/data/2.5/weather"
@@ -28,7 +27,7 @@ class WeatherService {
             completion(.failure(.urlError))
             return
         }
-        task = URLSession.shared.dataTask(with: url) {data, response, error in
+        task = session.dataTask(with: url) {data, response, error in
             guard error == nil else {
                 completion(.failure(.apiError))
                 return

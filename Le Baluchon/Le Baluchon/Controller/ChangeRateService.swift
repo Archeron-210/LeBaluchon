@@ -35,7 +35,7 @@ class ChangeRateService {
             completion(.failure(.urlError))
             return
         }
-        task = URLSession.shared.dataTask(with: url) {data, response, error in
+        task = session.dataTask(with: url) {data, response, error in
             guard error == nil else {
                 completion(.failure(.apiError))
                 return

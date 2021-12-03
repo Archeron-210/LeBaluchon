@@ -12,11 +12,13 @@
 		201D6BEC2742B61800C11EB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BEA2742B61800C11EB1 /* Main.storyboard */; };
 		201D6BEE2742B62300C11EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BED2742B62300C11EB1 /* Assets.xcassets */; };
 		201D6BF12742B62300C11EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BEF2742B62300C11EB1 /* LaunchScreen.storyboard */; };
-		201D6BFC2742B62400C11EB1 /* Le_BaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D6BFB2742B62400C11EB1 /* Le_BaluchonTests.swift */; };
 		201D6C222742CBF300C11EB1 /* Nickainley-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = 201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */; };
 		20774ED8275519B70075528C /* Traductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20774ED7275519B70075528C /* Traductor.swift */; };
 		20774EE12757BD6D0075528C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20774EE02757BD6D0075528C /* Weather.swift */; };
 		20774EE9275960C60075528C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20774EE8275960C60075528C /* String+Extension.swift */; };
+		20774EF1275A360D0075528C /* ChangeRateServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20774EF0275A360D0075528C /* ChangeRateServiceTestCase.swift */; };
+		20774EF9275A362C0075528C /* TraductorServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20774EF8275A362C0075528C /* TraductorServiceTestCase.swift */; };
+		20774EFE275A364D0075528C /* WeatherServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20774EFD275A364D0075528C /* WeatherServiceTestCase.swift */; };
 		20F8B1E427451679008B1518 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B1E327451678008B1518 /* WelcomeViewController.swift */; };
 		20F8B1F1274518A7008B1518 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B1F0274518A7008B1518 /* WeatherViewController.swift */; };
 		20F8B1F627451BC3008B1518 /* ChangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8B1F527451BC3008B1518 /* ChangeRateViewController.swift */; };
@@ -53,13 +55,15 @@
 		201D6BF02742B62300C11EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		201D6BF22742B62300C11EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201D6BF72742B62400C11EB1 /* Le BaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le BaluchonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		201D6BFB2742B62400C11EB1 /* Le_BaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Le_BaluchonTests.swift; sourceTree = "<group>"; };
 		201D6BFD2742B62400C11EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201D6C022742B62400C11EB1 /* Le BaluchonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le BaluchonUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nickainley-Normal.otf"; sourceTree = "<group>"; };
 		20774ED7275519B70075528C /* Traductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traductor.swift; sourceTree = "<group>"; };
 		20774EE02757BD6D0075528C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		20774EE8275960C60075528C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		20774EF0275A360D0075528C /* ChangeRateServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateServiceTestCase.swift; sourceTree = "<group>"; };
+		20774EF8275A362C0075528C /* TraductorServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraductorServiceTestCase.swift; sourceTree = "<group>"; };
+		20774EFD275A364D0075528C /* WeatherServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTestCase.swift; sourceTree = "<group>"; };
 		20F8B1E327451678008B1518 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		20F8B1F0274518A7008B1518 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = "Le Baluchon/View/WeatherViewController.swift"; sourceTree = SOURCE_ROOT; };
 		20F8B1F527451BC3008B1518 /* ChangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +132,9 @@
 		201D6BFA2742B62400C11EB1 /* Le BaluchonTests */ = {
 			isa = PBXGroup;
 			children = (
-				201D6BFB2742B62400C11EB1 /* Le_BaluchonTests.swift */,
+				20774EF0275A360D0075528C /* ChangeRateServiceTestCase.swift */,
+				20774EF8275A362C0075528C /* TraductorServiceTestCase.swift */,
+				20774EFD275A364D0075528C /* WeatherServiceTestCase.swift */,
 				201D6BFD2742B62400C11EB1 /* Info.plist */,
 			);
 			path = "Le BaluchonTests";
@@ -331,7 +337,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				201D6BFC2742B62400C11EB1 /* Le_BaluchonTests.swift in Sources */,
+				20774EFE275A364D0075528C /* WeatherServiceTestCase.swift in Sources */,
+				20774EF9275A362C0075528C /* TraductorServiceTestCase.swift in Sources */,
+				20774EF1275A360D0075528C /* ChangeRateServiceTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
