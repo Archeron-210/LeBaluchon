@@ -5,9 +5,9 @@ class TraductorService {
 
     // MARK: - Error management
     enum TraductorError: Error {
+        case requestError
         case noDataAvailable
         case parsingFailed
-        case urlError
         case apiError
         case httpResponseError
     }
@@ -31,6 +31,7 @@ class TraductorService {
     // MARK: - Functions
     func getTranslation(textToTranslate: String?, from language: Language, completion: @escaping(Result<TranslationData, TraductorError>) -> Void) {
         guard let request = createTranslationRequest(textToTranslate: textToTranslate, from: language) else {
+            completion(.failure(.requestError))
             return
         }
         task = session.dataTask(with: request) {data, response, error in

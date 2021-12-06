@@ -3,6 +3,27 @@ import UIKit
 
 class ChangeRateViewController: UIViewController {
 
+
+    // MARK: - Outlets
+    @IBOutlet weak var eurosTextField: UITextField!
+    @IBOutlet weak var dollarsTextField: UITextField!
+    @IBOutlet weak var convertButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var currencySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var stackViewBottomConstraint: NSLayoutConstraint!
+
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        originalStackViewBottomConstraint = stackViewBottomConstraint.constant
+
+        toggleActivityIndicator(shown: false)
+        setConvertButtonCorners()
+        setSegmentedControlAspect()
+
+        listenKeyboardNotifications()
+    }
+
     // MARK: - Properties
 
     private var currentChangeRate: Double {
@@ -34,26 +55,6 @@ class ChangeRateViewController: UIViewController {
 
     private var originalStackViewBottomConstraint:CGFloat = 0.0
 
-
-    // MARK: - Outlets
-    @IBOutlet weak var eurosTextField: UITextField!
-    @IBOutlet weak var dollarsTextField: UITextField!
-    @IBOutlet weak var convertButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var currencySegmentedControl: UISegmentedControl!
-    @IBOutlet weak var stackViewBottomConstraint: NSLayoutConstraint!
-
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        originalStackViewBottomConstraint = stackViewBottomConstraint.constant
-
-        toggleActivityIndicator(shown: false)
-        setConvertButtonCorners()
-        setSegmentedControlAspect()
-
-        listenKeyboardNotifications()
-    }
 
     // MARK: - Functions
     @IBAction func toggleConvertButton(_ sender: UIButton) {

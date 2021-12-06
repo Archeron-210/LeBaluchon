@@ -65,7 +65,22 @@ class TraductorServiceTestCase: XCTestCase {
         }
     }
 
-    func testGetTraductorShouldPostPostSuccessfulCallbackIfNoErrorAndCorrectResponseAndCorrectData() {
+    func testGetTraductorShouldPostFailedCallbackIfNoErrorAndCorrectResponseAndCorrectDataButRequestBuildingFailed() {
+        // Given
+        let traductorService = TraductorService(session: URLSessionFake(data: FakeTraductorResponseData.traductorCorrectData, response: FakeTraductorResponseData.responseOK, error: nil))
+        // When
+        traductorService.getTranslation(textToTranslate: nil, from: .french) { result in
+            // Then
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .requestError)
+            case .success:
+                XCTFail("Request should fail with requestError")
+            }
+        }
+    }
+
+    func testGetTraductorShouldPostSuccessfulCallbackIfNoErrorAndCorrectResponseAndCorrectData() {
         // Given
         let traductorService = TraductorService(session: URLSessionFake(data: FakeTraductorResponseData.traductorCorrectData, response: FakeTraductorResponseData.responseOK, error: nil))
         // When

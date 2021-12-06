@@ -41,9 +41,7 @@ class WeatherViewController: UIViewController {
                 case .success(let weatherForecast):
                     let temperature = String(weatherForecast.main.temp)
                     let description = weatherForecast.weather.first?.description ?? ""
-                    guard let weatherId = weatherForecast.weather.first?.id else {
-                        return
-                    }
+                    let weatherId = weatherForecast.weather.first?.id ?? 802
                     self.updateLabels(for: cityCode, temperature: temperature, description: description)
                     self.updateWeatherIcon(for: cityCode, for: weatherId)
                 }

@@ -3,23 +3,85 @@ import XCTest
 
 class WeatherServiceTestCase: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+    func testGetWeatherShouldPostFailedCallbackIfError() {
+        // Given
+        let weatherService = WeatherService(session: URLSessionFake(data: nil, response: nil, error: FakeTraductorResponseData.error))
+        // When
+        weatherService.getWeather(for: .nyc) { result in
+            // Then
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .apiError)
+            case .success:
+                XCTFail("Request should fail with apiError")
+            }
+        }
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testGetWeatherShouldPostFailedCallbackIfNoDataAvailable() {
+        // Given
+        let weatherService = WeatherService(session: URLSessionFake(data: nil, response: nil, error: nil))
+        // When
+        weatherService.getWeather(for: .nyc) { result in
+            // Then
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .noDataAvailable)
+            case .success:
+                XCTFail("Request should fail with noDataAvailable")
+            }
+        }
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGetWeatherShouldPostFailedCallbackIfCorrectDataButIncorrectResponse() {
+        // Given
+        let weatherService = WeatherService(session: URLSessionFake(data: FakeWeatherResponseData.weatherCorrectData, response: FakeWeatherResponseData.responseKO, error: nil))
+        // When
+        weatherService.getWeather(for: .nyc) { result in
+            // Then
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .httpResponseError)
+            case .success:
+                XCTFail("Request should fail with httpResponseError")
+            }
+        }
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGetWeatherShouldPostFailedCallbackIfCorrectResponseButIncorrectData() {
+        // Given
+        let weatherService = WeatherService(session: URLSessionFake(data: FakeWeatherResponseData.weatherIncorrectData, response: FakeWeatherResponseData.responseOK, error: nil))
+        // When
+        weatherService.getWeather(for: .nyc) { result in
+            // Then
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .parsingFailed)
+            case .success:
+                XCTFail("Request should fail with parsingFailed")
+            }
+        }
+    }
+
+    func testGetWeatherShouldPostSuccessfulCallbackIfNoErrorAndCorrectResponseAndCorrectData() {
+        // Given
+        let weatherService = WeatherService(session: URLSessionFake(data: FakeWeatherResponseData.weatherCorrectData, response: FakeWeatherResponseData.responseOK, error: nil))
+        // When
+        weatherService.getWeather(for: .nyc) { result in
+            // Then
+            let weatherId = 803
+            let description = "nuageux"
+            let temperature = 7.56
+            switch result {
+            case .failure:
+                XCTFail("Request should not fail")
+            case .success(let weatherForecast):
+                XCTAssertNotNil(weatherForecast)
+                XCTAssertEqual(weatherId, weatherForecast.weather.first!.id)
+                XCTAssertEqual(description, weatherForecast.weather.first!.description)
+                XCTAssertEqual(temperature, weatherForecast.main.temp)
+            }
         }
     }
 
