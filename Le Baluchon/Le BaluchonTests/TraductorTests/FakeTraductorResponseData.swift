@@ -4,7 +4,7 @@ import Foundation
 class FakeTraductorResponseData {
 
     // MARK: - Data
-    static var changeRateCorrectData: Data? {
+    static var traductorCorrectData: Data? {
         let bundle = Bundle(for: FakeTraductorResponseData.self)
         let url = bundle.url(forResource: "Traductor", withExtension: "json")!
         return try! Data(contentsOf: url)
