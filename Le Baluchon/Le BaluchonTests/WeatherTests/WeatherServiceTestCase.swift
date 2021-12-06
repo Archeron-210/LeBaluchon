@@ -1,4 +1,4 @@
-
+@testable import Le_Baluchon
 import XCTest
 
 class WeatherServiceTestCase: XCTestCase {

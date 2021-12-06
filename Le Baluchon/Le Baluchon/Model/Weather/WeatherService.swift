@@ -15,7 +15,10 @@ class WeatherService {
     private(set) static var shared = WeatherService()
 
     private var task: URLSessionDataTask?
-    private(set) var session = URLSession(configuration: .default)
+    private var session: URLSession
+    init(session: URLSession = URLSession(configuration: .default)) {
+        self.session = session
+    }
 
     private let apiKey = "API_KEY"
     private let baseUrl: String = "https://api.openweathermap.org/data/2.5/weather"

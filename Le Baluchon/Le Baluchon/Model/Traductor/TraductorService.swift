@@ -16,13 +16,14 @@ class TraductorService {
     private(set) static var shared = TraductorService()
 
     private var task: URLSessionDataTask?
-    private(set) var session = URLSession(configuration: .default)
+    private var session: URLSession
 
     private var resourceUrl: URL?
     private let apiKey = "API_KEY"
 
     // MARK: - Init
-    init() {
+    init(session: URLSession = URLSession(configuration: .default)) {
+        self.session = session
         let resourceString = "https://translation.googleapis.com/language/translate/v2?key=\(apiKey)"
         self.resourceUrl = URL(string: resourceString)
     }

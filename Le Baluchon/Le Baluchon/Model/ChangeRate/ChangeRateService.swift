@@ -17,13 +17,14 @@ class ChangeRateService {
     private(set) static var shared = ChangeRateService()
 
     private var task: URLSessionDataTask?
-    private(set) var session = URLSession(configuration: .default)
+    private var session: URLSession
 
     private var resourceUrl: URL?
     private let apiKey = "cd00e39fcd27cab07cec878d55125e50"
 
     // MARK: - Init
-    init() {
+    init(session: URLSession = URLSession(configuration: .default)) {
+        self.session = session
         let resourceString = "http://data.fixer.io/api/latest?access_key=\(apiKey)&symbols=USD&format=1"
         self.resourceUrl = URL(string: resourceString)
     }
