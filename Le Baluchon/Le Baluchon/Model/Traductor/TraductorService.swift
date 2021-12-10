@@ -68,7 +68,7 @@ class TraductorService {
         }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        var body = ""
+        var body: String
         switch language {
         case .english:
             body = "q=\(text)&source=en&target=fr&format=text"

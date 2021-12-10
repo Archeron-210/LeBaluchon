@@ -137,6 +137,14 @@ class ChangeRateViewController: UIViewController {
         return currentDate
     }
 
+    @IBAction func currencyDidChange(_ sender: UISegmentedControl) {
+        clearTextFields()
+    }
+
+    private func clearTextFields() {
+        eurosTextField.text = ""
+        dollarsTextField.text = ""
+    }
 
     // MARK: - Alerts
     private func errorAlert() {
@@ -162,11 +170,6 @@ class ChangeRateViewController: UIViewController {
 
     private func setConvertButtonCorners() {
         convertButton.layer.cornerRadius = 25.0
-    }
-
-    @IBAction func currencyDidChange(_ sender: UISegmentedControl) {
-        eurosTextField.text = ""
-        dollarsTextField.text = ""
     }
 
     private func setSegmentedControlAspect() {

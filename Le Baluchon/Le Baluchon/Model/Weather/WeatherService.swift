@@ -24,7 +24,7 @@ class WeatherService {
     private let baseUrl: String = "https://api.openweathermap.org/data/2.5/weather"
 
 
-    // MARK: - Get Weather Forecast
+    // MARK: - Functions
     func getWeather(for cityCode: CityCode, completion: @escaping (Result<Weather, WeatherError>)-> Void) {
         guard let url = resourceUrl(for: cityCode) else {
             completion(.failure(.urlError))
