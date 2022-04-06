@@ -4,6 +4,7 @@ import Foundation
 class WeatherService {
 
     // MARK: - Error management
+
     enum WeatherError: Error {
         case noDataAvailable
         case parsingFailed
@@ -11,7 +12,9 @@ class WeatherService {
         case apiError
         case httpResponseError
     }
+
     // MARK: - Properties
+
     private(set) static var shared = WeatherService()
 
     private var task: URLSessionDataTask?
@@ -25,6 +28,7 @@ class WeatherService {
 
 
     // MARK: - Functions
+    
     func getWeather(for cityCode: CityCode, completion: @escaping (Result<Weather, WeatherError>)-> Void) {
         guard let url = resourceUrl(for: cityCode) else {
             completion(.failure(.urlError))

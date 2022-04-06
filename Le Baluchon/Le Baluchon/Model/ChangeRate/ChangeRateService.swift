@@ -5,6 +5,7 @@ class ChangeRateService {
 
 
     // MARK: - Error management
+
     enum ChangeRateError: Error {
         case noDataAvailable
         case parsingFailed
@@ -14,6 +15,7 @@ class ChangeRateService {
     }
 
     // MARK: - Properties
+
     private(set) static var shared = ChangeRateService()
 
     private var task: URLSessionDataTask?
@@ -23,6 +25,7 @@ class ChangeRateService {
     private let apiKey = "cd00e39fcd27cab07cec878d55125e50"
 
     // MARK: - Init
+
     init(session: URLSession = URLSession(configuration: .default)) {
         self.session = session
         let resourceString = "http://data.fixer.io/api/latest?access_key=\(apiKey)&symbols=USD&format=1"
@@ -30,8 +33,8 @@ class ChangeRateService {
     }
 
     // MARK: - Get Change Rate
-    func getChangeRate(completion: @escaping (Result<ChangeRate, ChangeRateError>)-> Void) {
 
+    func getChangeRate(completion: @escaping (Result<ChangeRate, ChangeRateError>)-> Void) {
         guard let url = resourceUrl else {
             completion(.failure(.urlError))
             return

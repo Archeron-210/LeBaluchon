@@ -4,6 +4,7 @@ import Foundation
 class TraductorService {
 
     // MARK: - Error management
+
     enum TraductorError: Error {
         case requestError
         case noDataAvailable
@@ -13,6 +14,7 @@ class TraductorService {
     }
 
     // MARK: - Properties
+
     private(set) static var shared = TraductorService()
 
     private var task: URLSessionDataTask?
@@ -22,6 +24,7 @@ class TraductorService {
     private let apiKey = "API_KEY"
 
     // MARK: - Init
+
     init(session: URLSession = URLSession(configuration: .default)) {
         self.session = session
         let resourceString = "https://translation.googleapis.com/language/translate/v2?key=\(apiKey)"
@@ -29,6 +32,7 @@ class TraductorService {
     }
 
     // MARK: - Functions
+    
     func getTranslation(textToTranslate: String?, from language: Language, completion: @escaping(Result<TranslationData, TraductorError>) -> Void) {
         guard let request = createTranslationRequest(textToTranslate: textToTranslate, from: language) else {
             completion(.failure(.requestError))
