@@ -4,18 +4,22 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var weatherButton: UIButton!
     @IBOutlet weak var changeRateButton: UIButton!
     @IBOutlet weak var traductorButton: UIButton!
 
+    // MARK: - Property
+
+    private let aspectSetter = AspectSettings()
+
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButtonsAspect()
-    }
-
-    private func setButtonsAspect() {
-        weatherButton.layer.cornerRadius = 25.0
-        changeRateButton.layer.cornerRadius = 25.0
-        traductorButton.layer.cornerRadius = 25.0
+        aspectSetter.setButtonAspect(for: weatherButton)
+        aspectSetter.setButtonAspect(for: changeRateButton)
+        aspectSetter.setButtonAspect(for: traductorButton)
     }
 }

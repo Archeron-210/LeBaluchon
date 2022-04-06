@@ -13,11 +13,16 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    // MARK: - Property
+
+    private let aspectSetter = AspectSettings()
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
-        setRefreshButtonCorners()
+        aspectSetter.setButtonAspect(for: refreshButton)
+
         refreshWeather()
     }
 
@@ -110,10 +115,6 @@ class WeatherViewController: UIViewController {
         refreshButton.isHidden = shown
         activityIndicator.isHidden = !shown
         shown ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
-    }
-
-    private func setRefreshButtonCorners() {
-        refreshButton.layer.cornerRadius = 25.0
     }
 }
 

@@ -12,19 +12,9 @@ class ChangeRateViewController: UIViewController {
     @IBOutlet weak var currencySegmentedControl: UISegmentedControl!
     @IBOutlet weak var stackViewBottomConstraint: NSLayoutConstraint!
 
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        originalStackViewBottomConstraint = stackViewBottomConstraint.constant
-
-        toggleActivityIndicator(shown: false)
-        setConvertButtonCorners()
-        setSegmentedControlAspect()
-
-        listenKeyboardNotifications()
-    }
-
     // MARK: - Properties
+
+    private let aspectSetter = AspectSettings()
 
     private var currentChangeRate: Double {
         ChangeRateData.changeRate
@@ -54,6 +44,21 @@ class ChangeRateViewController: UIViewController {
     }
 
     private var originalStackViewBottomConstraint:CGFloat = 0.0
+
+    // MARK: - Lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        originalStackViewBottomConstraint = stackViewBottomConstraint.constant
+
+        toggleActivityIndicator(shown: false)
+        aspectSetter.setButtonAspect(for: convertButton)
+        aspectSetter.setSegmentedControlAspect(for: currencySegmentedControl)
+
+        listenKeyboardNotifications()
+    }
+
+
 
 
     // MARK: - Functions
@@ -162,22 +167,15 @@ class ChangeRateViewController: UIViewController {
     }
 
     // MARK: - UI Aspect
+
     private func toggleActivityIndicator(shown: Bool) {
         convertButton.isHidden = shown
         activityIndicator.isHidden = !shown
         shown ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
 
-    private func setConvertButtonCorners() {
-        convertButton.layer.cornerRadius = 25.0
-    }
-
-    private func setSegmentedControlAspect() {
-        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
-        currencySegmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
-    }
-
     // MARK: - Keyboard Management
+
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         eurosTextField.resignFirstResponder()
         dollarsTextField.resignFirstResponder()

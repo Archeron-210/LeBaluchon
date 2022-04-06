@@ -13,6 +13,7 @@
 		201D6BEE2742B62300C11EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BED2742B62300C11EB1 /* Assets.xcassets */; };
 		201D6BF12742B62300C11EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D6BEF2742B62300C11EB1 /* LaunchScreen.storyboard */; };
 		201D6C222742CBF300C11EB1 /* Nickainley-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = 201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */; };
+		202CBD6327FDCBB20004ED95 /* AspectSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202CBD6227FDCBB20004ED95 /* AspectSettings.swift */; };
 		20774ED8275519B70075528C /* Traductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20774ED7275519B70075528C /* Traductor.swift */; };
 		20774EE12757BD6D0075528C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20774EE02757BD6D0075528C /* Weather.swift */; };
 		20774EE9275960C60075528C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20774EE8275960C60075528C /* String+Extension.swift */; };
@@ -57,6 +58,7 @@
 		201D6BF72742B62400C11EB1 /* Le BaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le BaluchonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		201D6BFD2742B62400C11EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201D6C212742CBF200C11EB1 /* Nickainley-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nickainley-Normal.otf"; sourceTree = "<group>"; };
+		202CBD6227FDCBB20004ED95 /* AspectSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectSettings.swift; sourceTree = "<group>"; };
 		20774ED7275519B70075528C /* Traductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traductor.swift; sourceTree = "<group>"; };
 		20774EE02757BD6D0075528C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		20774EE8275960C60075528C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		201D6C1C2742B87C00C11EB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				202CBD6227FDCBB20004ED95 /* AspectSettings.swift */,
 				20F8B1F527451BC3008B1518 /* ChangeRateViewController.swift */,
 				20F8B1F0274518A7008B1518 /* WeatherViewController.swift */,
 				20F8B1FA27451BE4008B1518 /* TraductorViewController.swift */,
@@ -353,6 +356,7 @@
 				20F8B212274BE595008B1518 /* ChangeRate.swift in Sources */,
 				20F8B1F1274518A7008B1518 /* WeatherViewController.swift in Sources */,
 				201D6BE52742B61800C11EB1 /* AppDelegate.swift in Sources */,
+				202CBD6327FDCBB20004ED95 /* AspectSettings.swift in Sources */,
 				201D6BE72742B61800C11EB1 /* SceneDelegate.swift in Sources */,
 				20774ED8275519B70075528C /* Traductor.swift in Sources */,
 				20F8B1FB27451BE4008B1518 /* TraductorViewController.swift in Sources */,

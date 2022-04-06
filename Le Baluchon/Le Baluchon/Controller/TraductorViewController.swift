@@ -13,6 +13,7 @@ class TraductorViewController: UIViewController {
     
     // MARK: - Properties
 
+    private let aspectSetter = AspectSettings()
     private var originalStackViewBottomConstraint: CGFloat = 0.0
     private var translatedText = ""
 
@@ -20,9 +21,11 @@ class TraductorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         originalStackViewBottomConstraint = stackViewBottomConstraint.constant
+
         toggleActivityIndicator(shown: false)
-        setTranslateButtonCorners()
-        setSegmentedControlAspect()
+        aspectSetter.setButtonAspect(for: translateButton)
+        aspectSetter.setSegmentedControlAspect(for: languageSegmentedControl)
+
         listenKeyboardNotifications()
     }
 
@@ -91,15 +94,6 @@ class TraductorViewController: UIViewController {
         activityIndicator.isHidden = !shown
         shown ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
-
-    private func setTranslateButtonCorners() {
-        translateButton.layer.cornerRadius = 25.0
-    }
-
-    private func setSegmentedControlAspect() {
-        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
-        languageSegmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
-    }
 }
 
 extension TraductorViewController: UITextViewDelegate {
@@ -109,6 +103,7 @@ extension TraductorViewController: UITextViewDelegate {
     }
 
     // MARK: - Keyboard Management
+
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         textView.resignFirstResponder()
     }
