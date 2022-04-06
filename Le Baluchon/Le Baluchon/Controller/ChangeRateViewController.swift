@@ -5,6 +5,7 @@ class ChangeRateViewController: UIViewController {
 
 
     // MARK: - Outlets
+
     @IBOutlet weak var eurosTextField: UITextField!
     @IBOutlet weak var dollarsTextField: UITextField!
     @IBOutlet weak var convertButton: UIButton!
@@ -58,10 +59,8 @@ class ChangeRateViewController: UIViewController {
         listenKeyboardNotifications()
     }
 
-
-
-
     // MARK: - Functions
+
     @IBAction func toggleConvertButton(_ sender: UIButton) {
         computeConversion()
     }
@@ -152,6 +151,7 @@ class ChangeRateViewController: UIViewController {
     }
 
     // MARK: - Alerts
+    
     private func errorAlert() {
         let alert = UIAlertController(title: "Erreur", message: "Il semble que le courant passe mal avec le serveur 🔌", preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)

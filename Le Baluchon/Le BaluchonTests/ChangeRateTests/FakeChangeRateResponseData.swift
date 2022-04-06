@@ -2,7 +2,9 @@
 import Foundation
 
 class FakeChangeRateResponseData {
+
     // MARK: - Data
+
     static var changeRateCorrectData: Data? {
         let bundle = Bundle(for: FakeChangeRateResponseData.self)
         let url = bundle.url(forResource: "ChangeRate", withExtension: "json")!
@@ -12,6 +14,7 @@ class FakeChangeRateResponseData {
     static let changeRateIncorrectData = "erreur".data(using: .utf8)!
 
     // MARK: - Response
+
     static let responseOK = HTTPURLResponse(
         url: URL(string: "https://openclassrooms.com")!,
         statusCode: 200, httpVersion: nil, headerFields: [:])!
@@ -20,8 +23,8 @@ class FakeChangeRateResponseData {
         url: URL(string: "https://openclassrooms.com")!,
         statusCode: 500, httpVersion: nil, headerFields: [:])!
 
-
     // MARK: - Error
+
     class FakeChangeRateError: Error {}
     static let error = FakeChangeRateError()
 }

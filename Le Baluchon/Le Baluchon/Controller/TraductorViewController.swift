@@ -18,6 +18,7 @@ class TraductorViewController: UIViewController {
     private var translatedText = ""
 
     // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         originalStackViewBottomConstraint = stackViewBottomConstraint.constant
@@ -30,6 +31,7 @@ class TraductorViewController: UIViewController {
     }
 
     // MARK: - Functions
+
     @IBAction func toggleTranslationButton(_ sender: UIButton) {
         guard !textView.text.isEmpty else {
             textViewAlert()
@@ -74,6 +76,7 @@ class TraductorViewController: UIViewController {
     }
 
     // MARK: - Alerts
+
     private func errorAlert() {
         let alert = UIAlertController(title: "Erreur", message: "Il semble que le courant passe mal avec le serveur 🔌", preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -89,6 +92,7 @@ class TraductorViewController: UIViewController {
     }
 
     // MARK: - UI Aspect
+    
     private func toggleActivityIndicator(shown: Bool) {
         translateButton.isHidden = shown
         activityIndicator.isHidden = !shown

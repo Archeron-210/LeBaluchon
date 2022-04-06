@@ -4,6 +4,7 @@ import Foundation
 class FakeTraductorResponseData {
 
     // MARK: - Data
+
     static var traductorCorrectData: Data? {
         let bundle = Bundle(for: FakeTraductorResponseData.self)
         let url = bundle.url(forResource: "Traductor", withExtension: "json")!
@@ -13,6 +14,7 @@ class FakeTraductorResponseData {
     static let traductorIncorrectData = "erreur".data(using: .utf8)!
 
     // MARK: - Response
+
     static let responseOK = HTTPURLResponse(
         url: URL(string: "https://openclassrooms.com")!,
         statusCode: 200, httpVersion: nil, headerFields: [:])!
@@ -23,6 +25,7 @@ class FakeTraductorResponseData {
 
 
     // MARK: - Error
+    
     class FakeTraductorError: Error {}
     static let error = FakeTraductorError()
 }

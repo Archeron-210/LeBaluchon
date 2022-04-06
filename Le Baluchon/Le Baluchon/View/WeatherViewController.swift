@@ -18,6 +18,7 @@ class WeatherViewController: UIViewController {
     private let aspectSetter = AspectSettings()
 
     // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
@@ -27,6 +28,7 @@ class WeatherViewController: UIViewController {
     }
 
     // MARK: - Functions
+
     @IBAction func toggleRefreshButton(_ sender: UIButton) {
         refreshWeather()
     }
@@ -102,6 +104,7 @@ class WeatherViewController: UIViewController {
 
 
     // MARK: - Alert
+
     private func errorAlert() {
         let alert = UIAlertController(title: "Erreur", message: "Il semble que le courant passe mal avec le serveur 🔌", preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -111,6 +114,7 @@ class WeatherViewController: UIViewController {
 
 
     // MARK: - UI Aspect
+    
     private func toggleActivityIndicator(shown: Bool) {
         refreshButton.isHidden = shown
         activityIndicator.isHidden = !shown
